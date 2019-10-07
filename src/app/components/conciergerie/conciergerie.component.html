@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <app-how-it-works class="modal-help"></app-how-it-works>
+  </div>
+
+  <div class="row">
+    <app-service-item
+      class="col-sm-12"
+      *ngFor="let service of listServices"
+      [service]="service"
+    ></app-service-item>
+  </div>
+</div>

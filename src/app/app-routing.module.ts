@@ -4,6 +4,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { CommandesComponent } from './components/commandes/commandes.component';
+import { ConciergerieComponent } from './components/conciergerie/conciergerie.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'login', component : LoginComponent},
   {path:'services', component : ServicesComponent},
   {path:'commandes', component : CommandesComponent},
+  {path:'conciergerie', component: ConciergerieComponent}
 
 
  

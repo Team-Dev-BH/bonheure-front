@@ -16,6 +16,10 @@ import { CommandesComponent } from './components/commandes/commandes.component';
 import { ContactComponent } from './components/layout/contact/contact.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { ServiceItemComponent } from './components/service-item/service-item.component';
+import { CommandeItemComponent } from './components/commande-item/commande-item.component';
+import { ConciergerieComponent } from './components/conciergerie/conciergerie.component';
+import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { ServiceItemComponent } from './components/service-item/service-item.com
     CommandesComponent,
     ContactComponent,
     NotificationsComponent,
-    ServiceItemComponent
+    ServiceItemComponent,
+    CommandeItemComponent,
+    ConciergerieComponent,
+    HowItWorksComponent,
+    
   ],
   imports: [
     BrowserModule,

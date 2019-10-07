@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommandesComponent implements OnInit {
 
+  optionsList = []
+
   constructor() { }
 
   ngOnInit() {
+
+      this.optionsList = ["Devis à valider","Commandes validées","Historique des commandes","Feedbacks"]
   }
 
 }

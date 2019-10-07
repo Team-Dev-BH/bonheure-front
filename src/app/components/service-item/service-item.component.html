@@ -1,15 +1,16 @@
 
+<!--the link will go to the real component-->
 <a href="">
 
-        <div class="card" style="width: 22rem;">
+        <div class="card mt-4">
                 <div class="card-body">
-                  <h5 class="card-title ">{{service.categorie}} <i class="fas" [ngClass]="{' fa-users':service.categorie=='Service au clients',
+                  <div class="title-div"><h5 class="card-title ">{{service.categorie}} <i class="fas" [ngClass]="{' fa-users':service.categorie=='Service au clients',
                     ' fa-wrench':service.categorie=='Depannage',
                     ' fa-shopping-cart':service.categorie=='Quotidien',
                     ' fa-building':service.categorie=='Grands projets',
                     ' fa-tshirt':service.categorie=='Bien etre',
                     ' fa-question-circle':service.categorie=='A la damande'
-                }"></i></h5>
+                }"></i></h5></div>
                   <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
@@ -21,4 +22,4 @@
 
 </a>
 
-<i class="fas fa-question-circle"></i>
+
