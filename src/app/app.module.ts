@@ -19,6 +19,9 @@ import { ServiceItemComponent } from './components/service-item/service-item.com
 import { CommandeItemComponent } from './components/commande-item/commande-item.component';
 import { ConciergerieComponent } from './components/conciergerie/conciergerie.component';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
+import { MyspaceComponent } from './components/myspace/myspace.component';
+import { PilotageComponent } from './components/pilotage/pilotage.component';
+import { PilotageItemComponent } from './components/pilotage-item/pilotage-item.component';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
     CommandeItemComponent,
     ConciergerieComponent,
     HowItWorksComponent,
+    MyspaceComponent,
+    PilotageComponent,
+    PilotageItemComponent,
     
   ],
   imports: [

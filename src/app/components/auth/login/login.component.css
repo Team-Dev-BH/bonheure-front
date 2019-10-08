@@ -1,0 +1,47 @@
+i {
+  color: rgb(141, 109, 5);
+}
+
+a {
+  color: gray;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.footer a {
+  color: midnightblue;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(19, 79, 92);
+  padding-top: -5px;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+h2 {
+  text-align: center;
+  color: rgb(19, 79, 92);
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.forms {
+  margin-top: 1px;
+}
+
+.tel i {
+  color: rgb(19, 79, 92);
+}
+
+.btn-primary {
+  background-color: rgb(19, 79, 92);
+}
+
+.row {
+  padding-top: 0px;
+}
