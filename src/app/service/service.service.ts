@@ -13,7 +13,7 @@ export class ServiceService {
     { categorie: "Service au clients" },
     { categorie: "Grands projets" },
     { categorie: "Bien etre" },
-    { categorie: "A la damande" }
+    { categorie: "A la demande" }
   ];
 
   constructor() {}

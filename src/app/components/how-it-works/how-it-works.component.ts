@@ -1,11 +1,13 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from "@angular/core";
 
 import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
+import { fade } from "../../animations/animations";
 
 @Component({
   selector: "app-how-it-works",
   templateUrl: "./how-it-works.component.html",
-  styleUrls: ["./how-it-works.component.css"]
+  styleUrls: ["./how-it-works.component.css"],
+  animations: [fade]
 })
 export class HowItWorksComponent implements OnInit, AfterViewInit {
   closeResult: string;

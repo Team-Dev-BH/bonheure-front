@@ -1,0 +1,22 @@
+.row-services {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  border: solid 1px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(19, 79, 92);
+}
+
+/* Handle on hover */
