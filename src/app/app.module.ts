@@ -7,6 +7,10 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 //carousel
 import { NguCarouselModule } from "@ngu/carousel";
 
+import { MyspaceComponent } from "./components/myspace/myspace.component";
+import { PilotageComponent } from "./components/pilotage/pilotage.component";
+import { PilotageItemComponent } from "./components/pilotage-item/pilotage-item.component";
+
 //owl-carousel
 import { CarouselModule } from "ngx-owl-carousel-o";
 
@@ -48,7 +52,10 @@ import { CarouselOwlComponent } from "./components/conciergerie/carousel-owl/car
     HowItWorksComponent,
     CarouselComponent,
     CarouselNgbComponent,
-    CarouselOwlComponent
+    CarouselOwlComponent,
+    MyspaceComponent,
+    PilotageComponent,
+    PilotageItemComponent
   ],
   imports: [
     BrowserModule,

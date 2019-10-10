@@ -1,0 +1,38 @@
+h3 {
+  padding-left: 1px;
+  margin-left: 1px;
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(19, 79, 92);
+  padding-top: 50px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+h5 {
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+}
+
+li {
+  color: chocolate;
+}
+
+p {
+  color: black;
+  font-weight: bold;
+}
+
+.btn-light {
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+  font-size: 35;
+}
+
+.top-buffer {
+  margin-top: 10px;
+}
