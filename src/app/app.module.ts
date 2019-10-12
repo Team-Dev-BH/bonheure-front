@@ -33,6 +33,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CarouselComponent } from "./components/conciergerie/carousel/carousel.component";
 import { CarouselNgbComponent } from "./components/conciergerie/carousel-ngb/carousel-ngb.component";
 import { CarouselOwlComponent } from "./components/conciergerie/carousel-owl/carousel-owl.component";
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { CarouselOwlComponent } from "./components/conciergerie/carousel-owl/car
     CarouselOwlComponent,
     MyspaceComponent,
     PilotageComponent,
-    PilotageItemComponent
+    PilotageItemComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
