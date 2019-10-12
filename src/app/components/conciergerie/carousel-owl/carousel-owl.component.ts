@@ -9,23 +9,17 @@ import * as $ from "jquery";
 })
 export class CarouselOwlComponent implements OnInit, AfterViewInit {
   @Input() listServices;
-
-  items = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-  constructor() {}
-
-  ngOnInit() {}
-
-  ngAfterViewInit() {}
-
   customOptions: OwlOptions = {
+    autoHeight: true,
+    center: true,
+    margin: 5,
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
     navSpeed: 700,
-    navText: ["", ""],
+    navText: ["<", ">"],
     responsive: {
       0: { items: 1 },
       400: { items: 2 },
@@ -34,4 +28,10 @@ export class CarouselOwlComponent implements OnInit, AfterViewInit {
     },
     nav: true
   };
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  ngAfterViewInit() {}
 }
