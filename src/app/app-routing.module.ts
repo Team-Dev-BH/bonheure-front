@@ -9,21 +9,38 @@ import { MyspaceComponent } from "./components/myspace/myspace.component";
 import { PilotageComponent } from "./components/pilotage/pilotage.component";
 import { ContentComponent } from "./components/layout/content/content.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
+  { path: "dashboard", component: DashboardComponent },
 
   {
     path: "home",
     component: ContentComponent,
     children: [
-      { path: "services", component: ServicesComponent },
-      { path: "commandes", component: CommandesComponent },
-      { path: "conciergerie", component: ConciergerieComponent },
-      { path: "myspace", component: MyspaceComponent },
-      { path: "pilotages", component: PilotageComponent }
+      {
+        path: "services",
+        component: ServicesComponent
+      },
+      {
+        path: "commandes",
+        component: CommandesComponent
+      },
+      {
+        path: "conciergerie",
+        component: ConciergerieComponent
+      },
+      {
+        path: "myspace",
+        component: MyspaceComponent
+      },
+      {
+        path: "pilotages",
+        component: PilotageComponent
+      }
     ]
   },
 

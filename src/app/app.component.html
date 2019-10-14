@@ -1,5 +1,6 @@
-<router-outlet></router-outlet>
-
+<div [@fade]="prepareRoute(outlet)">
+  <router-outlet></router-outlet>
+</div>
 <!-- <app-header></app-header>
 
 <div @fade class="container-fluid">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { fade } from "../../../animations/animations";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: "app-content",
@@ -11,4 +12,10 @@ export class ContentComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet && outlet.activatedRouteData && outlet.activatedRouteData["fade"]
+    );
+  }
 }

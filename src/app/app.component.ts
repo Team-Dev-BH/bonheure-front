@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { fade } from "./animations/animations";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -9,4 +10,10 @@ import { fade } from "./animations/animations";
 })
 export class AppComponent {
   title = "bonheure-front";
+
+  prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet && outlet.activatedRouteData && outlet.activatedRouteData["fade"]
+    );
+  }
 }
