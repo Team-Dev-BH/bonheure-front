@@ -1,5 +1,5 @@
 i {
-  color: rgb(141, 109, 5);
+  color: rgb(179, 139, 7);
 }
 
 a {
@@ -44,4 +44,9 @@ h2 {
 
 .row {
   padding-top: 0px;
+}
+
+.btn-success {
+  background-color: rgb(179, 139, 7);
+  border: 1px solid rgb(179, 139, 7);
 }

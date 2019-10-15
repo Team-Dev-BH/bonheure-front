@@ -1,0 +1,16 @@
+h4 {
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+}
+
+h5 {
+  padding: 30px;
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+  font-size: 26px;
+}
+a {
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+  font-size: 15px;
+}

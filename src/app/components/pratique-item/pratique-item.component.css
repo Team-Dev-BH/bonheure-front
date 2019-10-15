@@ -1,0 +1,10 @@
+.video-fluid {
+  max-width: 350%;
+  height: auto;
+}
+.video-fluid:hover {
+  transform: scale(1.5);
+
+  z-index: 5;
+  box-shadow: 5px 5px 5px rgb(179, 139, 7);
+}
