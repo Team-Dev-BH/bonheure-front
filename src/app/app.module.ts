@@ -80,6 +80,7 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
     BrowserAnimationsModule,
     AppRoutingModule,
     NgbModule,
+    CarouselModule,
     FormsModule,
     MatStepperModule,
     MatIconModule,
