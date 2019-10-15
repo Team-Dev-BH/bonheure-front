@@ -4,6 +4,16 @@ import { NgModule } from "@angular/core";
 // ng-bootstrap
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
+//carousel
+import { NguCarouselModule } from "@ngu/carousel";
+
+import { MyspaceComponent } from "./components/myspace/myspace.component";
+import { PilotageComponent } from "./components/pilotage/pilotage.component";
+import { PilotageItemComponent } from "./components/pilotage-item/pilotage-item.component";
+
+//owl-carousel
+import { CarouselModule } from "ngx-owl-carousel-o";
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/layout/header/header.component";
@@ -19,9 +29,7 @@ import { ServiceItemComponent } from "./components/service-item/service-item.com
 import { CommandeItemComponent } from "./components/commande-item/commande-item.component";
 import { ConciergerieComponent } from "./components/conciergerie/conciergerie.component";
 import { HowItWorksComponent } from "./components/how-it-works/how-it-works.component";
-import { MyspaceComponent } from "./components/myspace/myspace.component";
-import { PilotageComponent } from "./components/pilotage/pilotage.component";
-import { PilotageItemComponent } from "./components/pilotage-item/pilotage-item.component";
+
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { PratiqueComponent } from "./components/pratique/pratique.component";
@@ -34,6 +42,11 @@ import {
   MatInputModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CarouselComponent } from "./components/conciergerie/carousel/carousel.component";
+import { CarouselNgbComponent } from "./components/conciergerie/carousel-ngb/carousel-ngb.component";
+import { CarouselOwlComponent } from "./components/conciergerie/carousel-owl/carousel-owl.component";
+import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
 
 @NgModule({
   declarations: [
@@ -51,11 +64,16 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     CommandeItemComponent,
     ConciergerieComponent,
     HowItWorksComponent,
+    CarouselComponent,
+    CarouselNgbComponent,
+    CarouselOwlComponent,
     MyspaceComponent,
     PilotageComponent,
     PilotageItemComponent,
     PratiqueComponent,
-    PratiqueItemComponent
+    PratiqueItemComponent,
+    PageNotFoundComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

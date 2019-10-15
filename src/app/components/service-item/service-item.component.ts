@@ -1,18 +1,15 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-service-item',
-  templateUrl: './service-item.component.html',
-  styleUrls: ['./service-item.component.css']
+  selector: "app-service-item",
+  templateUrl: "./service-item.component.html",
+  styleUrls: ["./service-item.component.css"]
 })
 export class ServiceItemComponent implements OnInit {
+  @Input() service;
+  @Input() listServices;
 
+  constructor() {}
 
-  @Input() service
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
