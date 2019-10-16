@@ -1,0 +1,20 @@
+<ngb-carousel
+  [interval]="interval"
+  [keyboard]="true"
+  [showNavigationArrows]="showNavigationArrows"
+  [showNavigationIndicators]="showNavigationIndicators"
+>
+  <ng-template ngbSlide *ngFor="let service of listServices">
+    <div class="row">
+      <div class="picsum-img-wrapper col-sm-4 active">
+        <app-service-item [service]="service"></app-service-item>
+      </div>
+      <!-- <div class="carousel-caption">
+      
+    </div> -->
+    </div>
+    <ng-template>
+      <app-service-item [service]="service"></app-service-item>
+    </ng-template>
+  </ng-template>
+</ngb-carousel>

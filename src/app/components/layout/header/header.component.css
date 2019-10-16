@@ -1,0 +1,52 @@
+
+nav div ul li a {
+
+    color : rgb(19,79, 92);
+    font-weight: 700;
+     
+    
+}
+
+
+
+@media  screen and (min-width: 992px) and (max-width:1620px){
+
+    .active-Link {
+ 
+ 
+        color: rgb(191,144,0);  
+        border-bottom: solid 3px;
+        border-color:  rgb(191,144,0);  
+      
+        
+        
+     }  
+
+     
+
+     .nav-item{
+
+        border-bottom: solid 2px gray;
+    
+    }
+    
+
+}
+
+ 
+
+ @media screen and (min-width: 500px)  and (max-width: 991px){
+
+
+.active-Link{
+
+
+    background-color:  rgba(191, 143, 0, 0.438);  
+    
+}
+
+ }
+
+
+ 
+

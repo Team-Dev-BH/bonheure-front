@@ -1,0 +1,34 @@
+.div-footer{
+
+ height: 13px;
+
+
+}
+
+
+.color-1{
+
+ background-color: rgb(191,144,0);
+}
+.color-2{
+    
+    background-color: rgb(19,79, 92);
+
+}
+.color-3{
+    background-color: rgb(120,144,156);
+
+}
+
+.footer-container {
+
+
+    display : flex;
+    flex-direction: column;
+}
+
+
+.footer-contact {
+
+align-self: flex-end;
+}

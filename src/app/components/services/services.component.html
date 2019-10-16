@@ -1,0 +1,10 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <app-service-item
+      class="col-sm-4"
+      *ngFor="let service of listService"
+      [service]="service"
+    >
+    </app-service-item>
+  </div>
+</div>

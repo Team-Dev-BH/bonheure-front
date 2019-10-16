@@ -1,0 +1,43 @@
+.image {
+  background-image: url(/assets/img/55.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: new time roman;
+}
+
+label {
+  font-size: 19px;
+  margin-top: 2px;
+  font-weight: bold;
+  font-family: new time roman;
+}
+
+small {
+  font-size: 18px;
+  color: gray;
+}
+
+.btn-info {
+  width: 180px;
+  font-size: 19px;
+  border-radius: 1000px;
+}
+
+.bc {
+  background: rgba(253, 253, 253, 0.897);
+}
+
+.border {
+  border: solid 1px gray;
+}
+
+h1 {
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.btn-success {
+  background-color: rgb(179, 139, 7);
+  border: 1px solid rgb(179, 139, 7);
+}

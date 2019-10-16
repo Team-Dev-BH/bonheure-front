@@ -1,0 +1,42 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-md-1.5 text-left">
+      <img src="./assets/img/bn.PNG" alt="" />
+    </div>
+    <div class="col-md-1.5 text-center">
+      <h4>Astuces</h4>
+    </div>
+  </div>
+
+  <br /><br />
+  <div class="row">
+    <app-pratique-item
+      class="col-md-4"
+      *ngFor="let pratique of listPratique"
+      [pratique]="pratique"
+    >
+    </app-pratique-item>
+  </div>
+
+  <div class="row ">
+    <div class="col-md-12 text-center">
+      <h5>FAQ</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <a routerLink="">Gérer ses commandes</a><br />
+      <a routerLink=""> Faire une réclamation</a>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <a routerLink="">Evaluer une prestation</a><br />
+      <a routerLink="">Obtenir une facture </a>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <a routerLink="">Contacter Smart Butler</a>
+    </div>
+  </div>
+</div>

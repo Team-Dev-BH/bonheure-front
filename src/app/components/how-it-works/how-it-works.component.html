@@ -1,0 +1,67 @@
+<ng-template #content let-modal>
+  <div @fade class="container">
+    <div class="row d-flex justify-content-center mt-4 mb-5">
+      <div class="col-sm-5">
+        <h1 class="modal-title" id="modal-basic-title">
+          Comment ça marche ?
+        </h1>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mb-2">
+      <div class="col-sm-6">
+        <img
+          src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          class="img-fluid"
+          alt="Responsive image"
+        />
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center hr-div">
+      <hr />
+      <i class="fas fa-circle point-1"></i>
+      <i class="fas fa-circle point-2"></i>
+      <i class="fas fa-circle point-3"></i>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3  mb-4">
+      <div class="col-sm-3">
+        <h6><i class="fas fa-check"></i> Vous choisissez votre service</h6>
+        <p>En quelques clics vous nous sedrivez votre probleme et vos besoin</p>
+      </div>
+      <div class="col-sm-3">
+        <h6><i class="fas fa-check"></i>Un de devis est transmis</h6>
+        <p>
+          Nous sélectionnons ensuite pour vous quelques préstataires disponibles
+          et vous partagerons leurs devis
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <h6><i class="fas fa-check"></i>La prestation est réealisée</h6>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam
+        </p>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="modal.close('Save click')"
+      >
+        J'ai compris !
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<button
+  class="btn btn-lg btn-outline-primary btn-modal mb-4 mr-3"
+  (click)="open(content)"
+>
+  Comment ça marche ?
+</button>
