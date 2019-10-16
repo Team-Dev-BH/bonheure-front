@@ -10,22 +10,41 @@ import { PilotageComponent } from "./components/pilotage/pilotage.component";
 import { ContentComponent } from "./components/layout/content/content.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { UsersListComponent } from "./components/dashboard/users-list/users-list.component";
+import { CategorieServiceDetailsComponent } from "./components/services/categorie-service-details/categorie-service-details.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
-  { path: "dashboard", component: DashboardComponent },
+  {
+    path: "dashboard",
+    component: DashboardComponent,
+    children: [
+      { path: "", redirectTo: "/dashboard", pathMatch: "full" },
+      { path: "users", component: UsersListComponent }
+    ],
+    data: { animation: "dashboardPage" }
+  },
 
   {
     path: "home",
     component: ContentComponent,
+
+    data: { animation: "homePage" },
     children: [
       {
         path: "services",
         component: ServicesComponent
       },
+
       {
+        path: "services/:reference",
+        component: CategorieServiceDetailsComponent
+      },
+
+      {
+        //commandes validées and other component of interface commade are going to childs
         path: "commandes",
         component: CommandesComponent
       },
@@ -48,7 +67,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

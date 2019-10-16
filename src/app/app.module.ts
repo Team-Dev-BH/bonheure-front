@@ -47,6 +47,8 @@ import { CarouselNgbComponent } from "./components/conciergerie/carousel-ngb/car
 import { CarouselOwlComponent } from "./components/conciergerie/carousel-owl/carousel-owl.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { UsersListComponent } from './components/dashboard/users-list/users-list.component';
+import { CategorieServiceDetailsComponent } from './components/services/categorie-service-details/categorie-service-details.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
     PratiqueComponent,
     PratiqueItemComponent,
     PageNotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersListComponent,
+    CategorieServiceDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ServiceService } from "../../service/service.service";
 
 import { Subscription } from "rxjs";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-service",
@@ -16,13 +17,18 @@ export class ServicesComponent implements OnInit, OnDestroy {
 
   listSubcription: Subscription;
 
-  constructor(private serviceSrv: ServiceService) {}
+  constructor(private serviceSrv: ServiceService, private router: Router) {}
 
   ngOnInit() {
     this.listSubcription = this.serviceSrv.listSubject.subscribe(services => {
       this.listService = services;
     });
 
+    this.serviceSrv.emitListSubject();
+  }
+
+  selectService(service) {
+    this.router.navigate(["/home/services", service.reference]);
     this.serviceSrv.emitListSubject();
   }
 
