@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { UsersListComponent } from "./components/dashboard/users-list/users-list.component";
 import { CategorieServiceDetailsComponent } from "./components/services/categorie-service-details/categorie-service-details.component";
+import { PrestationDetailsComponent } from "./components/services/prestation-details/prestation-details.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -39,8 +40,12 @@ const routes: Routes = [
       },
 
       {
-        path: "services/:reference",
+        path: "services/:referenceCategorie",
         component: CategorieServiceDetailsComponent
+      },
+      {
+        path: "services/:referenceCategotrie/:referencePrestation",
+        component: PrestationDetailsComponent
       },
 
       {

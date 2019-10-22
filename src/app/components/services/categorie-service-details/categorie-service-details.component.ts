@@ -1,6 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { ServiceService } from "../../../service/service.service";
+
+//service for sharing data between comande interfaces
+import { DataStorageCommandeService } from "../../../service/data-storage-commande.service";
 import { ActivatedRoute, Router, ParamMap } from "@angular/router";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-categorie-service-details",
@@ -9,22 +13,41 @@ import { ActivatedRoute, Router, ParamMap } from "@angular/router";
 })
 export class CategorieServiceDetailsComponent implements OnInit {
   serviceReference;
-  serviceServices = [];
+
+  categorieSubscription: Subscription;
+  categorie = {};
 
   constructor(
     private serviceSrv: ServiceService,
+    private dataStorageService: DataStorageCommandeService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit() {
-    // snapshot apporch , limited :
-    // let reference = this.route.snapshot.paramMap.get("reference");
-
-    //paramMap absovale :
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.serviceReference = params.get("reference");
-      console.log(this.serviceReference);
+      this.serviceReference = params.get("referenceCategorie");
     });
+
+    this.categorie = this.serviceSrv.getSingleServiceByReference(
+      parseInt(this.serviceReference)
+    );
+
+    console.log(this.categorie);
+
+    //send route param to next component:
+  }
+
+  //selection a prestation
+  selectPrestation(prestation) {
+    // sending route param to next component using data storage service
+    this.dataStorageService.changeRouteParam(this.serviceReference);
+
+    this.router.navigate(
+      ["/home/services/", this.serviceReference, prestation.reference],
+      {
+        state: { serviceReference: this.serviceReference }
+      }
+    );
   }
 }

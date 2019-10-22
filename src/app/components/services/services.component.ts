@@ -27,6 +27,7 @@ export class ServicesComponent implements OnInit, OnDestroy {
     this.serviceSrv.emitListSubject();
   }
 
+  // navigate a certain categorie
   selectService(service) {
     this.router.navigate(["/home/services", service.reference]);
     this.serviceSrv.emitListSubject();

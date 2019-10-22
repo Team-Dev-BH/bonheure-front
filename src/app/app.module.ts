@@ -42,13 +42,14 @@ import {
   MatInputModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { CarouselComponent } from "./components/conciergerie/carousel/carousel.component";
-import { CarouselNgbComponent } from "./components/conciergerie/carousel-ngb/carousel-ngb.component";
 import { CarouselOwlComponent } from "./components/conciergerie/carousel-owl/carousel-owl.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
-import { UsersListComponent } from './components/dashboard/users-list/users-list.component';
-import { CategorieServiceDetailsComponent } from './components/services/categorie-service-details/categorie-service-details.component';
+import { UsersListComponent } from "./components/dashboard/users-list/users-list.component";
+import { CategorieServiceDetailsComponent } from "./components/services/categorie-service-details/categorie-service-details.component";
+import { PrestationItemComponent } from "./components/prestation-item/prestation-item.component";
+import { PrestationDetailsComponent } from "./components/services/prestation-details/prestation-details.component";
+import { SousPrestationItemComponent } from './components/sous-prestation-item/sous-prestation-item.component';
 
 @NgModule({
   declarations: [
@@ -66,8 +67,6 @@ import { CategorieServiceDetailsComponent } from './components/services/categori
     CommandeItemComponent,
     ConciergerieComponent,
     HowItWorksComponent,
-    CarouselComponent,
-    CarouselNgbComponent,
     CarouselOwlComponent,
     MyspaceComponent,
     PilotageComponent,
@@ -77,7 +76,10 @@ import { CategorieServiceDetailsComponent } from './components/services/categori
     PageNotFoundComponent,
     DashboardComponent,
     UsersListComponent,
-    CategorieServiceDetailsComponent
+    CategorieServiceDetailsComponent,
+    PrestationItemComponent,
+    PrestationDetailsComponent,
+    SousPrestationItemComponent
   ],
   imports: [
     BrowserModule,

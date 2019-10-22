@@ -1,0 +1,22 @@
+<a href="javascript: void(0)" (click)="onSelect(prestation)">
+  <div class="card mt-4">
+    <div class="card-body">
+      <div class="title-div">
+        <i
+          class="fas"
+          [ngClass]="{
+            ' fa-shower': prestation.type == 'plomberie',
+            ' fa-paint-roller': prestation.type == 'peinture',
+            ' fa-temperature-low': prestation.type == 'chaud-froid',
+            ' fa-bolt': prestation.type == 'electricité',
+            ' fa-tshirt': prestation.type == 'Bien etre',
+            ' fa-question-circle': prestation.type == 'a la demande'
+          }"
+        ></i>
+        <h5 class="card-title ">
+          {{ prestation.type }}
+        </h5>
+      </div>
+    </div>
+  </div>
+</a>
