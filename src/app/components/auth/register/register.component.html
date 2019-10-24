@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
   <div class="row">
     <div class="col-md-1.5 text-left">
@@ -247,3 +248,243 @@
   <!--row-->
 </div>
 <!--container-->
+=======
+<div class="row mt-3">
+  <div class="col-md-2 ">
+    <img src="./assets/img/bn.PNG" alt="" />
+  </div>
+</div>
+
+<mat-horizontal-stepper>
+  <mat-step>
+    <ng-template matStepLabel
+      ><b>Etape 1 : Informations Personnels</b></ng-template
+    >
+
+    <!--   code Step 1-->
+    <div class="container mt-3 ">
+      <div class="row ">
+        <div class="col-md-12 text-center">
+          <h1 class="text-center">Informations Personnelles</h1>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+            <div class="r1">
+              <div class="col">
+                <div class="form-group">
+                  <label>First name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    placeholder="name"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Last name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    placeholder="name"
+                  />
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+      <div class="row mt-3 ">
+        <div class="col-sm-3"></div>
+
+        <div class="col-sm-6 border 3px solid ">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="mb-5 mt-5 ml-5  ">
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <label>Nom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Votre nom"
+                    formControlName="nom"
+                    autocomplete="off"
+                  />
+                  <!-- <div *ngIf="registerForm.controls['nom'].errors?.required"> -->
+                  Required
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label>Prénom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Votre prénom"
+                />
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label>Numéro de téléphone</label>
+                <input type="number" class="form-control" />
+              </div>
+              <div class="col-md-6">
+                <label>Date de naissance</label>
+                <input type="date" class="form-control" />
+              </div>
+            </div>
+            <div class="row mt-3  text-center">
+              <div class="col-md-10">
+                <button
+                  mat-button
+                  matStepperNext
+                  class="btn btn-success "
+                  type="submit"
+                >
+                  <b> Suivant >> </b>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step label="Etape 2">
+    <!--   code Step 2-->
+
+    <div class="container mt-3 ">
+      <div class="row ">
+        <div class="col-md-12 text-center">
+          <h1 class="text-center">Informations</h1>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+              <div class="r1">
+                <div class="col">
+                  <div class="form-group">
+                    <label>First name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      placeholder="name"
+                    />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label>Last name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      placeholder="name"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+      <div class="row mt-3 ">
+        <div class="col-sm-3"></div>
+
+        <div class="col-sm-6 border 3px solid ">
+          <form>
+            <div class="mb-5 mt-5 ml-5  ">
+              <div class="col-md-8 ml-5">
+                <label>E-mail</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="xxx@email.com"
+                />
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <label>Code-entreprise</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                  <label>Fonction</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <label>Mot de passe</label>
+                  <input type="password" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                  <label>Confirmation mot de passe</label>
+                  <input type="password" class="form-control" />
+                </div>
+              </div>
+              <div class="row mt-3  text-right">
+                <div class="col-md-4">
+                  <button
+                    mat-button
+                    matStepperPrevious
+                    class="btn btn-success "
+                    type="submit"
+                  >
+                    <b> << Retour </b>
+                  </button>
+                </div>
+
+                <div class="col-md-4">
+                  <button
+                    class="btn btn-success "
+                    type="submit"
+                    onclick="fonction1"
+                  >
+                    <b>Valider </b>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<!-- <mat-vertical-stepper linear>
+  <mat-step #mystep [stepControl]="formGroup1" optional editable="false">
+    <div [formGroup]="formGroup1">
+      <form [formGroup]="formGroup1">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="last name, first"
+            formControlName="firstCtrl"
+            required
+          />
+        </mat-form-field>
+      </form>
+    </div>
+  </mat-step>
+
+  <mat-step [stepControl]="formGroup2">
+    <div [formGroup]="formGroup2">
+      <form [formGroup]="formGroup2">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="last name, first"
+            formControlName="firstCtrl"
+            required
+          />
+        </mat-form-field>
+      </form>
+    </div>
+  </mat-step>
+</mat-vertical-stepper> -->
+>>>>>>> b98b6f88850a69d501dfb8faac2ed7fdf38e85ae

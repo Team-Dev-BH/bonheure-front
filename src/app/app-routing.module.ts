@@ -10,6 +10,7 @@ import { PilotageComponent } from "./components/pilotage/pilotage.component";
 import { ContentComponent } from "./components/layout/content/content.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
+<<<<<<< HEAD
 import { PratiqueComponent } from "./components/pratique/pratique.component";
 import { AccueilComponent } from "./components/prestataire/accueil/accueil.component";
 import { DevisComponent } from "./components/prestataire/devis/devis.component";
@@ -30,6 +31,11 @@ import { RecapComponent } from "./components/services/recap/recap.component";
 import { ConfirmationComponent } from "./components/services/confirmation/confirmation.component";
 import { AccueilParametreComponent } from "./components/prestataire/parametre/accueil-parametre/accueil-parametre.component";
 import { SousPresConciergerieComponent } from "./components/conciergerie/sous-pres-conciergerie/sous-pres-conciergerie.component";
+=======
+import { UsersListComponent } from "./components/dashboard/users-list/users-list.component";
+import { CategorieServiceDetailsComponent } from "./components/services/categorie-service-details/categorie-service-details.component";
+import { PrestationDetailsComponent } from "./components/services/prestation-details/prestation-details.component";
+>>>>>>> b98b6f88850a69d501dfb8faac2ed7fdf38e85ae
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -38,17 +44,38 @@ const routes: Routes = [
   { path: "register_pres_accueil", component: RegisterPresAccComponent },
   { path: "register_pres_soci", component: RegisterPresSociComponent },
   { path: "login", component: LoginComponent },
-  { path: "dashboard", component: DashboardComponent },
+  {
+    path: "dashboard",
+    component: DashboardComponent,
+    children: [
+      { path: "", redirectTo: "/dashboard", pathMatch: "full" },
+      { path: "users", component: UsersListComponent }
+    ],
+    data: { animation: "dashboardPage" }
+  },
 
   {
     path: "home",
     component: ContentComponent,
+
+    data: { animation: "homePage" },
     children: [
       {
         path: "services",
         component: ServicesComponent
       },
+
       {
+        path: "services/:referenceCategorie",
+        component: CategorieServiceDetailsComponent
+      },
+      {
+        path: "services/:referenceCategotrie/:referencePrestation",
+        component: PrestationDetailsComponent
+      },
+
+      {
+<<<<<<< HEAD
         path: "service_type",
         component: ServiceTypeComponent
       },
@@ -67,6 +94,9 @@ const routes: Routes = [
         component: ConfirmationComponent
       },
       {
+=======
+        //commandes validées and other component of interface commade are going to childs
+>>>>>>> b98b6f88850a69d501dfb8faac2ed7fdf38e85ae
         path: "commandes",
         component: CommandesComponent
       },
@@ -147,7 +177,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

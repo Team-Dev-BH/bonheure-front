@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <app-prestation-item
+      class="col-sm-4"
+      *ngFor="let prestation of categorie.services"
+      [prestation]="prestation"
+      (selectPrestation)="selectPrestation($event)"
+    ></app-prestation-item>
+  </div>
+</div>

@@ -26,8 +26,10 @@
             <a href="#">Page 3</a>
           </li>
         </ul>
-        <a href="#" class="list-group-item list-group-item-action side-item"
-          >Shortcuts</a
+        <a
+          routerLink="users"
+          class="list-group-item list-group-item-action side-item"
+          >utilisateurs</a
         >
         <a href="#" class="list-group-item list-group-item-action side-item"
           >Overview</a
@@ -50,11 +52,15 @@
       <nav class="navbar navbar-expand-lg  border-bottom">
         <button
           (click)="toggleSideBar()"
-          class="btn btn-primary toggle-menu"
+          class="btn btn-primary toggle-menu ml-2 mr-2"
           id="menu-toggle"
         >
           <i class="fas fa-bars"></i>
         </button>
+
+        <!-- <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a href="">home</a></li>
+        </ul> -->
 
         <button
           class="navbar-toggler"
@@ -68,7 +74,13 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <a routerLink="/home">
+            <button class="btn toggle-menu">
+              retour a l'acceuil
+            </button></a
+          >
+        </div>
       </nav>
 
       <div class="container-fluid">
@@ -83,6 +95,7 @@
           <code>#page-content-wrapper</code>. The top navbar is optional, and
           just for demonstration. Just create an element with the
           <code>#menu-toggle</code> ID which will toggle the menu when clicked.
+          <router-outlet></router-outlet>
         </p>
       </div>
     </div>

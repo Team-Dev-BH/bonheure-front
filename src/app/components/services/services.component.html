@@ -4,6 +4,7 @@
       class="col-sm-4"
       *ngFor="let service of listService"
       [service]="service"
+      (selectService)="selectService($event)"
     >
     </app-service-item>
   </div>
