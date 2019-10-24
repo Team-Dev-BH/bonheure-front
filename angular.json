@@ -80,7 +80,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "bonheure-front:build"
-          }
+          } 
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -89,20 +89,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-<<<<<<< HEAD
-
-=======
->>>>>>> b98b6f88850a69d501dfb8faac2ed7fdf38e85ae
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
-<<<<<<< HEAD
-            ]
-=======
             ],
             "scripts": []
->>>>>>> b98b6f88850a69d501dfb8faac2ed7fdf38e85ae
           }
         },
         "lint": {

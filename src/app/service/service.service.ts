@@ -12,15 +12,6 @@ export class ServiceService {
   selectedItem;
   selectedPrestation;
 
-<<<<<<< HEAD
-  public listService = [
-    { categorie: "Quotidien" },
-    { categorie: "Depannage" },
-    { categorie: "Service au clients" },
-    { categorie: "Grands projets" },
-    { categorie: "Bien etre" },
-    { categorie: "A la demande" }
-=======
   private listService = [
     {
       reference: 1,
@@ -189,7 +180,6 @@ export class ServiceService {
         }
       ]
     }
->>>>>>> b98b6f88850a69d501dfb8faac2ed7fdf38e85ae
   ];
   listServices: any;
 
