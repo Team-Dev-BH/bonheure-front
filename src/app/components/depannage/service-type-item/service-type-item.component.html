@@ -1,0 +1,21 @@
+<a href="">
+  <div class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title mb-2">
+        <i
+          class="fas"
+          [ngClass]="{
+            ' fa-screwdriver  fa-5x': type.Sous_categorie == 'Plomberie',
+            ' fa-charging-station  fa-5x': type.Sous_categorie == 'Electricite',
+            ' fa-temperature-high  fa-5x': type.Sous_categorie == 'Chaud-froid',
+            '  fa-paint-roller fa-5x': type.Sous_categorie == 'Peinture',
+            ' fa-window-restore fa-5x': type.Sous_categorie == 'Vitrerie',
+            ' fa-sync-alt': type.Sous_categorie == 'A la Demande'
+          }"
+        >
+        </i>
+        {{ type.Sous_categorie }}
+      </h5>
+    </div>
+  </div>
+</a>

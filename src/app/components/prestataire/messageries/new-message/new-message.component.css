@@ -1,0 +1,22 @@
+label {
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+}
+
+.struct {
+  background-color: rgb(226, 222, 222);
+}
+
+.btn-default {
+  background-color: rgb(179, 139, 7);
+}
+
+.btn-success {
+  background-color: rgb(179, 139, 7);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.btn-danger {
+  background-color: rgb(179, 139, 7);
+  border: 1px solid rgb(255, 255, 255);
+}

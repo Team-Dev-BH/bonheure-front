@@ -7,7 +7,7 @@ import { Subject } from "rxjs";
 export class ServiceService {
   listSubject = new Subject<any[]>();
 
-  private listService = [
+  public listService = [
     { categorie: "Quotidien" },
     { categorie: "Depannage" },
     { categorie: "Service au clients" },
@@ -15,6 +15,7 @@ export class ServiceService {
     { categorie: "Bien etre" },
     { categorie: "A la demande" }
   ];
+  listServices: any;
 
   constructor() {}
 

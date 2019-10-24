@@ -1,13 +1,15 @@
 export class User {
-  reference: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  mobileNumber: number;
-  password: string;
-  birthDate: Date;
-  creationDate: Date;
-  modificationDate: Date;
-  activationDate: Date;
-  activated: boolean;
+  constructor(
+    public reference: string,
+    public firstName: string,
+    public lastName: string,
+    public email: string,
+    public mobileNumber: string,
+    public password: string,
+    // public birthDate: Date,
+    // public creationDate: Date,
+    // public modificationDate: Date,
+    // public activationDate: Date,
+    public activated: boolean
+  ) {}
 }

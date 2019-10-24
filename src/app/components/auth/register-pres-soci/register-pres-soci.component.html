@@ -1,0 +1,209 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-1.5 text-left">
+      <img src="./assets/img/bn.PNG" alt="" />
+    </div>
+    <div class="col-md-1.5 d-flex justify-content-center mt-4">
+      <h2>Bon<b style="color: darkgoldenrod">'</b>Heure</h2>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center mt-5">
+    <div class="col-sm-9 ">
+      <!-- {{ registerpForm.value | json }} -->
+      <form
+        #registerpForm="ngForm"
+        [formGroup]="register_pre_sociForm"
+        (ngSubmit)="onSubmitForm()"
+        autocomplete="off"
+      >
+        <mat-horizontal-stepper class="border ">
+          <!-- Etape 1-->
+
+          <mat-step label="Etape 1 ">
+            <h1>Informations Générales</h1>
+            <h5>Informations Société</h5>
+            <div class="row mt-5">
+              <div class="col">
+                <div class="form-group">
+                  <label for="firstName">Nom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    formControlName="firstName"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="adress">Adresse</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="adress"
+                    formControlName="adress"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="mobileNumber">Numéro de téléphone</label>
+                  <input
+                    type="number"
+                    id="mobileNumber"
+                    class="form-control"
+                    formControlName="mobileNumber"
+                  />
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label for="email">E-mail </label>
+                  <input class="form-control" formControlName="email" />
+                </div>
+              </div>
+            </div>
+            <!--Information demandeur-->
+            <h5>Informations demandeur</h5>
+            <div class="row mt-5">
+              <div class="col">
+                <div class="form-group">
+                  <label for="firstName">Nom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    formControlName="firstName"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="lastName">Prénom</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="lastName"
+                  />
+                </div>
+              </div>
+            </div>
+            <!--function == position-->
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="position">Fonction</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="position"
+                  />
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label for="email">E-mail </label>
+                  <input class="form-control" formControlName="email" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col d-flex justify-content-left">
+                <button
+                  mat-button
+                  matStepperNext
+                  class="btn btn-success "
+                  type="submit"
+                >
+                  Suivant >>
+                </button>
+              </div>
+            </div>
+          </mat-step>
+          <!-- Etape 2-->
+
+          <mat-step label="Etape 2 ">
+            <h1>Information Professionnelles</h1>
+            <div class="row mt-5">
+              <div class="col">
+                <div class="form-group">
+                  <label for="creationDate">Date de création</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    formControlName="creationDate"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="registration">N° registre de commerce</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="registration"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-5 d-flex justify-content-center">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="workingAria">Lieu de travail</label>
+                  <select
+                    type="text"
+                    class="form-control"
+                    formControlName="region"
+                  >
+                    <option>Ariana</option>
+                    <option>La Marsa</option>
+                    <option>Le Bardo</option>
+                    <option>La Goulette</option>
+                    <option>Carthage</option>
+                    <option>Sidi Bou Saïd</option>
+                    <option>Ben Aouss</option>
+                    <option>Tunis</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col d-flex justify-content-left">
+                <button
+                  mat-button
+                  matStepperPrevious
+                  class="btn btn-success "
+                  type="submit"
+                >
+                  << Retour
+                </button>
+              </div>
+
+              <div class="col d-flex justify-content-left">
+                <div class=" col d-flex justify-content-right">
+                  <button
+                    class="btn btn-success "
+                    type="submit"
+                    [disabled]="register_pre_sociForm.invalid"
+                  >
+                    Valider
+                  </button>
+                </div>
+              </div>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </form>
+    </div>
+  </div>
+  <!--row-->
+</div>
+<!--container-->

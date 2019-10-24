@@ -1,0 +1,36 @@
+<div class="conyainer">
+  <div class="row  d-flex justify-content-center mt-5">
+    <div class="col-md-3">
+      <button
+        type="button"
+        class=" btn-lg btn-block "
+        (click)="new_message()"
+        routerLinkActive="active-Link"
+      >
+        Nouveau message
+      </button>
+    </div>
+
+    <div class="col-md-3">
+      <button
+        routerLinkActive="active-Link"
+        type="button"
+        class=" btn-lg btn-block "
+        (click)="received_message()"
+      >
+        Messages reçus
+      </button>
+    </div>
+
+    <div class="col-md-3">
+      <button
+        type="button"
+        class=" btn-lg btn-block  "
+        routerLinkActive="active-Link"
+      >
+        Notifications
+      </button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,71 +1,95 @@
-<br />
-
-<br />
-<form class="">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2 text-left">
-        <img src="./assets/img/bn.PNG" alt="" />
-      </div>
-      <div class="col-md-8 text-center">
-        <h1>Bon<b style="color: darkgoldenrod">'</b>Heure</h1>
-        <h2>Votre butler au quotidien</h2>
-      </div>
-      <div class="col-md-2 text-right">
-        <button type="button" class="btn btn-light">
-          Comment ça marche ?
-        </button>
-      </div>
-    </div>
-
-    <div class="form row d-flex justify-content-center mt-5 mb-15">
-      <div class="col-sm-4">
-        <input
-          type="text"
-          class="form-control "
-          id="staticEmail"
-          placeholder="Adresse email"
-        />
-      </div>
-    </div>
-    <div class="form row d-flex justify-content-center mt-2 mb-4">
-      <div class="col-sm-4">
-        <input
-          type="password"
-          class="form-control"
-          id="inputPassword"
-          placeholder="Password"
-        />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12  text-center">
-        <button type="button" class="btn btn-success">Se connecter</button>
-      </div>
-    </div>
-    <br /><br />
-    <div style="text-align: center">
-      <a routerLink="/register">
-        <i class="fas fa-circle fa-xs "></i> Créer votre compte</a
-      >
-    </div>
-  </div>
-</form>
-<div class="tel">
+<div class="container-fluid  mt-5">
   <div class="row">
-    <div class="col-md-12 text-right">
-      <i class="fas fa-phone-volume fa-2x"></i>
-
-      <button
-        class="btn btn-primary custom-button-width .navbar-right"
-        type="submit"
-      >
-        <b> Besoin d'aide? </b>
+    <div class="col-md-2 text-left">
+      <img src="./assets/img/bn.PNG" alt="" />
+    </div>
+    <div class="col-md-8 text-center">
+      <h1>Bon<b style="color: darkgoldenrod">'</b>Heure</h1>
+      <h2>Votre butler au quotidien</h2>
+    </div>
+    <div class="col-md-2 text-right">
+      <button type="button" class="btn btn-light">
+        Comment ça marche ?
       </button>
     </div>
   </div>
-</div>
 
-<div class="footer">
-  <a routerLink=""> Mention légales</a>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmitForm()" autocomplete="off">
+    <div class="row d-flex justify-content-center mt-5">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <input
+            [class.is-invalid]="email.invalid && email.touched"
+            class="form-control"
+            placeholder="xxx@email.com"
+            formControlName="email"
+          />
+          <div *ngIf="email.invalid && email.touched">
+            <small *ngIf="email.errors?.required" class="text-danger">
+              champ obligatoire</small
+            >
+            <small *ngIf="email.errors?.minlength" class="text-danger"
+              >le nom doit etre plus de 3 caractéres</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center ">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <input
+            [class.is-invalid]="password.invalid && password.touched"
+            class="form-control"
+            placeholder="Password"
+            formControlName="password"
+          />
+
+          <div *ngIf="password.invalid && password.touched">
+            <small *ngIf="password.errors?.required" class="text-danger">
+              champ obligatoire</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12  text-center">
+        <div class="form-group">
+          <button
+            class="btn btn-success"
+            type="submit"
+            [disabled]="loginForm.invalid"
+          >
+            Se connecter
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br /><br />
+  <div style="text-align: center">
+    <a routerLink="/register">
+      <i class="fas fa-circle fa-xs "></i> Créer votre compte</a
+    >
+  </div>
+
+  <div class="tel">
+    <div class="row">
+      <div class="col-md-12 text-right">
+        <i class="fas fa-phone-volume fa-2x"></i>
+        <button
+          class="btn btn-primary custom-button-width .navbar-right"
+          type="submit"
+        >
+          <b> Besoin d'aide? </b>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <a routerLink=""> Mention légales</a>
+  </div>
 </div>

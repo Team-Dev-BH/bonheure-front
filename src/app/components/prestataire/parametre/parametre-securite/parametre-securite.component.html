@@ -1,0 +1,42 @@
+<div
+  class="container  border solid 2px  mt-5 pt-3 pl-3 pb-3 pr-3 justify-content-center"
+>
+  <div class="row ">
+    <div class="col-md-6">
+      <p>Ajouter une préstation</p>
+      <!-- <div>
+        <input type="checkbox" id="coding" name="interest" value="coding" />
+        <label for="coding">{{ this.liste }}</label>
+      </div> -->
+      <div>
+        <input type="checkbox" id="music" name="interest" value="music" />
+        <label for="music">Plomberie</label>
+      </div>
+      <div>
+        <input type="checkbox" id="music" name="interest" value="music" />
+        <label for="music">Eléctricité</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="music" name="interest" value="music" />
+        <label for="music">Pintre</label>
+      </div>
+      <button type="submit" (click)="ajout_pres()">Ajouter</button>
+    </div>
+
+    <div class="col-md-6 ">
+      <p>Ajouter un numéro de téléphone</p>
+
+      <input type="text" class="form-control" /><br />
+      <button type="submit" (click)="ajout_tel()">Ajouter</button>
+    </div>
+  </div>
+  <hr />
+  <div class="row mt-4">
+    <div class="col-md-12  ">
+      <p>Ajouter une adresse</p>
+      <input type="text" class="form-control" /><br />
+      <button type="submit" (click)="ajout_adresse()">Ajouter</button>
+    </div>
+  </div>
+</div>

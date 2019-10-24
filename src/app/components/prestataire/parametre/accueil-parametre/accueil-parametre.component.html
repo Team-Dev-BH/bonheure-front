@@ -1,0 +1,52 @@
+<br /><br />
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card text-white  bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">Informations personnelles</div>
+        <div class="card-body ">
+          <h5 class="card-title">{{ userList[0].name }}</h5>
+          <h5 class="card-title">{{ userList.name }}</h5>
+
+          <p class="card-text">
+            <b>+216 21 334 556</b> hamadi.abidi@gmail.com Rue 812,Impasse 3 - El
+            Manzah 3- 1004
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-white  bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">Paramétres du compte</div>
+        <div class="card-body d-flex justify-content-center">
+          <p class="card-text">
+            <a routerLink="/home/sidebar_parametre/parametre_securite"
+              >Sécurité & Accés</a
+            ><br /><br />
+
+            <a routerLink="/home/sidebar_parametre/parametre_metier"
+              >Métier & Spécialités</a
+            >
+            <br />
+            <br />
+
+            <a routerLink="">Gestion & Notifications</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">Contact & Réclamation</div>
+        <div class="card-body">
+          <h5 class="card-title">Light card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
