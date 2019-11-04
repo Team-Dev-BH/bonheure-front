@@ -10,9 +10,12 @@
   <div class="row">
     <div class="col-md-1 text-left"></div>
     <div class="col-md-1.5 text-left">
-      <a href="">Accueil</a> > <a href="">Mon espace</a>
+      <a routerLink="/home">Accueil</a> >
+      <a routerLink="/myspace">Mon espace</a>
     </div>
-    <div class="col-md-8  text-center">
+  </div>
+  <div class="row">
+    <div class="col-md-12 ">
       <h1>Ravis de vous Revoir !</h1>
     </div>
   </div>
@@ -36,13 +39,19 @@
     </div>
     <br />
 
-    <div class="col-md-3">
-      <h5>Prénom NOM</h5>
+    <div class="col-md-3" *ngFor="let i of listUser">
+      <h5>{{ i.firstName }} {{ i.lastName }}</h5>
       <br />
       <ul>
-        <li><p>nom.prenom@email.com</p></li>
-        <li><p>+ 216 50 05 50</p></li>
-        <li><p>RSSI à L'Oréal</p></li>
+        <li>
+          <p>{{ i.email }}</p>
+        </li>
+        <li>
+          <p>{{ i.mobileNumber }}</p>
+        </li>
+        <li>
+          <p>{{ i.fonction }}</p>
+        </li>
       </ul>
     </div>
   </div>

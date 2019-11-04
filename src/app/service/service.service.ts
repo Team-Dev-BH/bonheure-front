@@ -16,6 +16,7 @@ export class ServiceService {
     {
       reference: 1,
       categorie: "Quotidien",
+      image: "quotidien.jpg",
       services: [
         {
           reference: 1,
@@ -63,6 +64,7 @@ export class ServiceService {
     {
       reference: 2,
       categorie: "Depannage",
+      image: "depannage.PNG",
       services: [
         {
           reference: 1,
@@ -94,6 +96,8 @@ export class ServiceService {
     {
       reference: 3,
       categorie: "Service clients",
+      image: "service-client.webp",
+
       services: [
         {
           reference: 1,
@@ -125,6 +129,8 @@ export class ServiceService {
     {
       reference: 4,
       categorie: "Grands projets",
+      image: "project.jpg",
+
       services: [
         {
           reference: 1,
@@ -141,6 +147,8 @@ export class ServiceService {
     {
       reference: 5,
       categorie: "Bien etre",
+      image: "bienetre.jpg",
+
       services: [
         {
           reference: 1,
@@ -162,6 +170,8 @@ export class ServiceService {
     {
       reference: 6,
       categorie: "A la demande",
+      image: "demande.jpg",
+
       services: [
         {
           reference: 1,

@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10">
+      <p class="text-center">
+        Vous avez sélectionné {{ name }} pour s'occuper de votre probléme
+        aujourd'hui ! <br />vous trouverez l'état de votre demande ci-dessous.
+        B'H est à votre service, n'hésitez pas à nous contacter si besoin.
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-2">
+      <img
+        src="assets/img/ciel.jpg"
+        class="img-fluid rounded-circle"
+        alt="Responsive image"
+      />
+    </div>
+
+    <div class="col-md-2 pt-2">
+      <div class="info">
+        {{ name }} <br />
+        ( {{ avis }} avis )
+      </div>
+    </div>
+    <div class="col-md-2 pt-3">
+      <div class="pr">
+        {{ prix }}
+      </div>
+    </div>
+
+    <div class="col-md-1">
+      <button type="button" class="btn btn-success btn-lg  ">
+        Récapitulatif de votre demande
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-success btn-lg  ">
+        Contacter {{ name }}
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-1 d-flex justify-content-left ">
+    <div class="col-md-3 justify-content-center">
+      <div class="endPres">
+        <h6><i class="fas fa-check fa-lg"></i> Sollicitation confirmée</h6>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="endPres">
+        <h6><i class="fas fa-check fa-lg"></i> {{ name }} est en route</h6>
+      </div>
+    </div>
+
+    <div class="col-md-3  ">
+      <div class="dark">
+        <h6><i class="far fa-clock"></i> Prestation terminée</h6>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <button type="button" class="btn btn-success btn-lg disabled  ">
+        Evaluer la préstation
+      </button>
+    </div>
+  </div>
+  <div class="row mt-2 justify-content-center">
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary btn-lg  ">
+        <i class="fas fa-phone-alt fa-lg"></i>
+        Nous contacter par téléphone
+      </button>
+    </div>
+  </div>
+</div>

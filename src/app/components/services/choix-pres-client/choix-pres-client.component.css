@@ -1,0 +1,16 @@
+.btn-primary {
+  width: 270px;
+  background-color: rgb(19, 79, 92);
+  border: rgb(19, 97, 92) 1px;
+  font-size: 15px;
+}
+
+img {
+  width: 60px;
+  height: auto;
+}
+
+p {
+  font-size: 10px;
+  font-weight: bold;
+}

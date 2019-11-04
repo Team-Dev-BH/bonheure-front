@@ -39,7 +39,8 @@ import {
   MatIconModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatSelectModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CarouselOwlComponent } from "./components/conciergerie/carousel-owl/carousel-owl.component";
@@ -68,13 +69,28 @@ import { AccueilParametreComponent } from "./components/prestataire/parametre/ac
 import { SousPresConciergerieComponent } from "./components/conciergerie/sous-pres-conciergerie/sous-pres-conciergerie.component";
 import { CommentaireConciergerieComponent } from "./components/conciergerie/commentaire-conciergerie/commentaire-conciergerie.component";
 import { RecapConciergerieComponent } from "./components/conciergerie/recap-conciergerie/recap-conciergerie.component";
-import { ConfirmationConciergerieComponent } from "./components/conciergerie/confirmation-conciergerie/confirmation-conciergerie.component";
 import { UsersListComponent } from "./components/dashboard/users-list/users-list.component";
 import { CategorieServiceDetailsComponent } from "./components/services/categorie-service-details/categorie-service-details.component";
 import { PrestationItemComponent } from "./components/prestation-item/prestation-item.component";
 import { PrestationDetailsComponent } from "./components/services/prestation-details/prestation-details.component";
 import { SousPrestationItemComponent } from "./components/sous-prestation-item/sous-prestation-item.component";
-
+import { SousPresConciergerieItemComponent } from "./components/conciergerie/sous-pres-conciergerie-item/sous-pres-conciergerie-item.component";
+import { ConfirmationConciergerieComponent } from "./components/conciergerie/confirmation-conciergerie/confirmation-conciergerie.component";
+import { ChoixPresConciergerieComponent } from "./components/conciergerie/choix-pres-conciergerie/choix-pres-conciergerie.component";
+import { ChoixPresConciergerieItemComponent } from "./components/conciergerie/choix-pres-conciergerie-item/choix-pres-conciergerie-item.component";
+import { ChoixPresSelectComponent } from "./components/conciergerie/choix-pres-select/choix-pres-select.component";
+import { ChoixPresAttenteComponent } from "./components/conciergerie/choix-pres-attente/choix-pres-attente.component";
+import { ChoixPresEvaluationComponent } from "./components/conciergerie/choix-pres-evaluation/choix-pres-evaluation.component";
+import { ConfirmationPresConciergerieComponent } from "./components/conciergerie/confirmation-pres-conciergerie/confirmation-pres-conciergerie.component";
+import { ChoixPresClientComponent } from "./components/services/choix-pres-client/choix-pres-client.component";
+import { ChoixPresClientItemComponent } from "./components/services/choix-pres-client-item/choix-pres-client-item.component";
+import { ParametreSecuriteItemComponent } from "./components/prestataire/parametre/parametre-securite-item/parametre-securite-item.component";
+import { AddPrestationComponent } from "./components/prestataire/parametre/parametre-securite/add-prestation/add-prestation.component";
+import { AddAdresseComponent } from "./components/prestataire/parametre/parametre-securite/add-adresse/add-adresse.component";
+import { AddTelComponent } from "./components/prestataire/parametre/parametre-securite/add-tel/add-tel.component";
+import { ConciergerieItemComponent } from "./components/conciergerie/conciergerie-item/conciergerie-item.component";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { NgxPaginationModule } from "ngx-pagination";
 @NgModule({
   declarations: [
     AppComponent,
@@ -122,12 +138,26 @@ import { SousPrestationItemComponent } from "./components/sous-prestation-item/s
     SousPresConciergerieComponent,
     CommentaireConciergerieComponent,
     RecapConciergerieComponent,
-    ConfirmationConciergerieComponent,
     UsersListComponent,
     CategorieServiceDetailsComponent,
     PrestationItemComponent,
     PrestationDetailsComponent,
-    SousPrestationItemComponent
+    SousPrestationItemComponent,
+    SousPresConciergerieItemComponent,
+    ConfirmationConciergerieComponent,
+    ChoixPresConciergerieComponent,
+    ChoixPresConciergerieItemComponent,
+    ChoixPresSelectComponent,
+    ChoixPresAttenteComponent,
+    ChoixPresEvaluationComponent,
+    ConfirmationPresConciergerieComponent,
+    ChoixPresClientComponent,
+    ChoixPresClientItemComponent,
+    ParametreSecuriteItemComponent,
+    AddPrestationComponent,
+    AddAdresseComponent,
+    AddTelComponent,
+    ConciergerieItemComponent
   ],
   imports: [
     BrowserModule,
@@ -142,7 +172,10 @@ import { SousPrestationItemComponent } from "./components/sous-prestation-item/s
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,15 @@
-import { Component, OnInit, Input, AfterViewInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  AfterViewInit,
+  Output,
+  EventEmitter
+} from "@angular/core";
 import { OwlOptions } from "ngx-owl-carousel-o";
 import * as $ from "jquery";
+import { ServiceService } from "src/app/service/service.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-carousel-owl",
@@ -8,7 +17,10 @@ import * as $ from "jquery";
   styleUrls: ["./carousel-owl.component.css"]
 })
 export class CarouselOwlComponent implements OnInit, AfterViewInit {
+  @Input() service;
   @Input() listServices;
+  @Output() selectService = new EventEmitter();
+
   customOptions: OwlOptions = {
     autoHeight: true,
     center: true,
@@ -32,9 +44,11 @@ export class CarouselOwlComponent implements OnInit, AfterViewInit {
     nav: true
   };
 
-  constructor() {}
+  constructor(private router: Router, private srvService: ServiceService) {}
 
   ngOnInit() {}
-
+  onSelect(service) {
+    this.selectService.emit(service);
+  }
   ngAfterViewInit() {}
 }

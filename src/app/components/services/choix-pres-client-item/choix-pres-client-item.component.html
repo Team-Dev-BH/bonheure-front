@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-2">
+      <img
+        src="assets/img/{{ choix.image }}"
+        alt="..."
+        class="rounded-circle"
+      />
+    </div>
+    <div class="col-md-3 ">
+      {{ choix.name }} <br />
+      ( {{ choix.avis }} avis )<br />
+      {{ choix.disponibilite }}<br />
+
+      <a routerLink="">Modifier ma demande</a>
+    </div>
+
+    <div class="col-md-2">
+      {{ choix.prix }}
+    </div>
+
+    <div class="col-sm-1">
+      <button type="button" class="btn btn-success btn-lg  ">
+        Valider
+      </button>
+    </div>
+
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-success btn-lg  ">
+        Autres devis
+      </button>
+    </div>
+
+    <div class="col-sm-2 border  pl-4  ">
+      <h6>Tarif Inclut :</h6>
+      <p>Main d'oeuvre</p>
+      <p>Déplacement</p>
+      <p>Matériel & outils de base</p>
+    </div>
+  </div>
+</div>

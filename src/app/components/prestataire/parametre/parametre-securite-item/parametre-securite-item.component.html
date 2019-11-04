@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <form
+      [formGroup]="parametre_securite"
+      (ngSubmit)="onSubmitForm()"
+      autocomplete="off"
+    >
+      <div class="col-md-12">
+        <div class="form-group">
+          <input
+            type="checkbox"
+            name="prestataire"
+            formControlName="prestataire"
+          />
+
+          <label for="prestataire">{{ pres.name }}</label>
+          <div class="col-md-1">
+            <button type="submit" class="btn btn-success">
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

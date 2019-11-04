@@ -33,6 +33,16 @@ import { SousPresConciergerieComponent } from "./components/conciergerie/sous-pr
 import { UsersListComponent } from "./components/dashboard/users-list/users-list.component";
 import { CategorieServiceDetailsComponent } from "./components/services/categorie-service-details/categorie-service-details.component";
 import { PrestationDetailsComponent } from "./components/services/prestation-details/prestation-details.component";
+import { RecapConciergerieComponent } from "./components/conciergerie/recap-conciergerie/recap-conciergerie.component";
+import { CommentaireConciergerieComponent } from "./components/conciergerie/commentaire-conciergerie/commentaire-conciergerie.component";
+import { ConfirmationConciergerieComponent } from "./components/conciergerie/confirmation-conciergerie/confirmation-conciergerie.component";
+import { ChoixPresConciergerieComponent } from "./components/conciergerie/choix-pres-conciergerie/choix-pres-conciergerie.component";
+import { ChoixPresSelectComponent } from "./components/conciergerie/choix-pres-select/choix-pres-select.component";
+import { ChoixPresAttenteComponent } from "./components/conciergerie/choix-pres-attente/choix-pres-attente.component";
+import { ChoixPresEvaluationComponent } from "./components/conciergerie/choix-pres-evaluation/choix-pres-evaluation.component";
+import { ConfirmationPresConciergerieComponent } from "./components/conciergerie/confirmation-pres-conciergerie/confirmation-pres-conciergerie.component";
+import { ChoixPresClientComponent } from "./components/services/choix-pres-client/choix-pres-client.component";
+import { ChoixPresClientItemComponent } from "./components/services/choix-pres-client-item/choix-pres-client-item.component";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "register", component: RegisterComponent },
@@ -40,6 +50,8 @@ const routes: Routes = [
   { path: "register_pres_accueil", component: RegisterPresAccComponent },
   { path: "register_pres_soci", component: RegisterPresSociComponent },
   { path: "login", component: LoginComponent },
+  { path: "myspace", component: MyspaceComponent },
+
   {
     path: "dashboard",
     component: DashboardComponent,
@@ -72,31 +84,78 @@ const routes: Routes = [
         component: ServiceTypeComponent
       },
 
-      // {
-      //   path: "commande_delai",
-      //   component: CommandeDelaiComponent
-      // },
-      // {
-      //   path: "recap",
-      //   component: RecapComponent
-      // },
+      {
+        path: "commande_delai",
+        component: CommandeDelaiComponent
+      },
+      {
+        path: "recap",
+        component: RecapComponent
+      },
 
-      // {
-      //   path: "confirmation",
-      //   component: ConfirmationComponent
-      // },
+      {
+        path: "confirmation",
+        component: ConfirmationComponent
+      },
       {
         path: "commandes",
         component: CommandesComponent
       },
       {
+        path: "choix_pres_client",
+        component: ChoixPresClientComponent
+      },
+      {
+        path: "choix_pres_client_item",
+        component: ChoixPresClientItemComponent
+      },
+      {
         path: "conciergerie",
         component: ConciergerieComponent
       },
+
+      {
+        path: "sous_pres_conciergerie",
+        component: SousPresConciergerieComponent
+      },
       // {
-      //   path: "sous_pres_conciergerie",
+      //   path: "conciergerie/:referenceConciergerie",
       //   component: SousPresConciergerieComponent
       // },
+      {
+        path: "commentaire_conciergerie",
+        component: CommentaireConciergerieComponent
+      },
+      {
+        path: "recap_conciergerie",
+        component: RecapConciergerieComponent
+      },
+      {
+        path: "choix_pres_conciergerie",
+        component: ChoixPresConciergerieComponent
+      },
+      {
+        path: "choix_pres_select",
+        component: ChoixPresSelectComponent
+      },
+
+      {
+        path: "choix_pres_attente",
+        component: ChoixPresAttenteComponent
+      },
+
+      {
+        path: "choix_pres_evaluation",
+        component: ChoixPresEvaluationComponent
+      },
+      {
+        path: "confirmation_pres_conciergerie",
+        component: ConfirmationPresConciergerieComponent
+      },
+      {
+        path: "confirmation_conciergerie",
+        component: ConfirmationConciergerieComponent
+      },
       {
         path: "myspace",
         component: MyspaceComponent

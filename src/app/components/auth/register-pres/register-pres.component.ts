@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { User } from "src/app/entities/user.model";
-
+import { PasswordValidator } from "../../../control/password.validator";
 @Component({
   selector: "app-register-pres",
   templateUrl: "./register-pres.component.html",
@@ -62,16 +62,6 @@ export class RegisterPresComponent implements OnInit {
     return this.register_preForm.get("type_pres");
   }
 
-  // userModel = new User(
-  //   "gd",
-  //   "sagre",
-  //   "gre",
-  //   "fhb@gmail.com",
-  //   "6568",
-  //   "fdsf",
-  //   true
-  // );
-
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
@@ -86,8 +76,8 @@ export class RegisterPresComponent implements OnInit {
       mobileNumber: ["", [Validators.required, Validators.minLength(8)]],
       startActivityDate: [],
       fonction: ["", Validators.required],
-      password: ["", Validators.required],
-      confirmPassword: ["", Validators.required],
+      password: [""],
+      confirmPassword: ["", PasswordValidator],
       code: ["", Validators.required],
       rue: ["", Validators.required],
       postalCode: ["", Validators.required],
@@ -98,6 +88,10 @@ export class RegisterPresComponent implements OnInit {
       categorie: ["", Validators.required],
       type_pres: ["", Validators.required]
     });
+
+    this.register_preForm.controls.password.valueChanges.subscribe(x =>
+      this.register_preForm.controls.confirmPassword.updateValueAndValidity()
+    );
   }
   onSubmitForm() {
     const formValue = this.register_preForm.value;

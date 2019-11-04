@@ -4,6 +4,8 @@ a {
   font-size: 20px;
 }
 
-.btn {
+.btn-primary {
   font-size: 20px;
+  background-color: rgb(19, 79, 92);
+  border: 2px rgb(19, 79, 92);
 }

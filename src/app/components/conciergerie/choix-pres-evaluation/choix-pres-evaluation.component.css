@@ -1,0 +1,33 @@
+p {
+  color: rgb(19, 79, 92);
+
+  font-size: 15px;
+}
+
+textarea {
+  width: 450px;
+}
+
+h6 {
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+}
+
+.col-md-2 {
+  color: rgb(19, 79, 92);
+}
+
+.btn-success {
+  background-color: rgb(179, 139, 7);
+  border: 1px rgb(179, 139, 7);
+  width: 300px;
+  font-size: 13px;
+}
+
+
+.rating-block{
+	background-color:#FAFAFA;
+	border:1px solid #EFEFEF;
+	padding:15px 15px 20px 15px;
+	border-radius:3px;
+}

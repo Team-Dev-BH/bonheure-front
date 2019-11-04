@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row d-flex justify-content-center mt-5">
     <div class="border 4px solid pt-3 pb-3">
       <div class="col-md-12"><h2>Merci pour votre confiance</h2></div>
@@ -48,5 +48,64 @@
     </div>
 
     <div class="col-md-3"></div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-5"></div>
+    <div class="col-md-5">
+      <h3>Merci pour votre confiance !</h3>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-3"></div>
+
+    <img src="assets/img/completed.png" alt="..." class="fixed-right" />
+
+    <div class="col-md-6  justify-content-center">
+      <p>
+        Votre demande a été soumise avec succés. Nous transmettons les éléments
+        à nos partenaires et vous revenons avec un devis sous 60 minutes
+      </p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-4">
+      <button type="button" class="btn btn-success btn-lg" (click)="recap()">
+        <i class="fas fa-arrow-circle-left"></i>
+        Récapitulatif de ma demande
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-success btn-lg " (click)="edit()">
+        Editer ma demande
+        <i class="fas fa-arrow-circle-right"></i>
+      </button>
+    </div>
+    <div class="col-md-3">
+      <a routerLink="">
+        <button type="button" class="btn btn-success btn-lg  ">
+          Contacter un conseiller?
+          <i class="fas fa-arrow-circle-right"></i>
+        </button>
+      </a>
+    </div>
+  </div>
+  <div class="row mt-5 ">
+    <div class="col-md-5"></div>
+
+    <div class="col-md-5">
+      <button type="button" class="btn btn-success btn-lg" (click)="acceuil()">
+        Retour à la page d'acceuil
+      </button>
+    </div>
+    <div class="col-md-1"></div>
   </div>
 </div>

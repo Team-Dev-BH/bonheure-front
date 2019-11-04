@@ -1,1 +1,78 @@
-<p>recap-conciergerie works!</p>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <h3>Récapitulatif de votre demande</h3>
+    </div>
+  </div>
+
+  <div class="row mt-3 d-flex justify-content-center ">
+    <div class="col-md-6">
+      Votre problème concerne <b>{{ listPrestaionDetails[0].namePres }}</b
+      >provenant de vos
+      <b>{{ listCategorieDetails[0].nameCategorie }}</b>
+    </div>
+    <!-- <div class="col-md-1"></div> -->
+
+    <div class="col-md-6">
+      Vous souhaitez être dépanné <b>{{ commande[0].delai }} </b> ,à l'adresse
+      suivante : <b>{{ adress[0].name }}</b>
+    </div>
+  </div>
+
+  <div class="row mt-5 ">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-5">
+      <p>
+        Afin de garantir un dépannage dans les plus brefs dèlais, le devis vous
+        sera transmis à titre informatif uniquement. Pas d'annulation possibles
+        une fois la demande confirmée.
+      </p>
+    </div>
+    <div class="col-md-2"></div>
+
+    <div class="col-md-3">
+      <img src="assets/img/maintenance.jpg" alt="..." class="img-thumbnail" />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-5">
+      <h4>Vos commentaires</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10">
+      <textarea type="text" class="form-control"></textarea>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-4">
+      <button
+        type="button"
+        class="btn btn-success btn-lg  "
+        (click)="confirm()"
+      >
+        C'est exact! je confirme ma demande
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-success btn-lg  ">
+        Non, je souhaite modifier ma demande
+      </button>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-success btn-lg  ">
+        Nous contacter par téléphone
+      </button>
+    </div>
+  </div>
+</div>

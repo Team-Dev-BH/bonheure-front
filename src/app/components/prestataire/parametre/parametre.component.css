@@ -34,7 +34,6 @@ a {
   align-items: stretch;
 }
 
-
 body {
   overflow-x: hidden;
 }
@@ -81,4 +80,8 @@ body {
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+}
+
+h3 {
+  color: rgb(179, 139, 7);
 }

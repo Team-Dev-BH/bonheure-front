@@ -1,0 +1,44 @@
+/* mat-label {
+  width: 300px;
+}
+
+.col-md-6 {
+  color: rgb(179, 139, 7);
+  font-size: 15px;
+  font-weight: bolder;
+}
+.col-md-8 {
+  color: rgb(179, 139, 7);
+  font-size: 16spx;
+  font-weight: bolder;
+}
+
+.btn-success {
+  width: auto;
+  background-color: rgb(19, 79, 92);
+  border: rgb(19, 97, 92) 1px;
+  font-size: 16px;
+} */
+
+h4 {
+  color: rgb(179, 139, 7);
+}
+
+p {
+  color: rgb(19, 79, 92);
+}
+
+textarea {
+  color: rgb(19, 79, 92);
+  height: 100px;
+}
+
+h5 {
+  color: rgb(179, 139, 7);
+}
+
+.btn-success {
+  width: 150px;
+  background-color: rgb(19, 79, 92);
+  border: rgb(19, 97, 92) 1px;
+}

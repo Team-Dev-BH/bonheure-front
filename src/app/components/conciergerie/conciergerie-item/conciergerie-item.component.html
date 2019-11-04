@@ -1,0 +1,20 @@
+<!--the link will go to the real component-->
+<a href="javascript: void(0)" (click)="onSelect(service)">
+  <div class="card mt-5 text-white border-0 ">
+    <div class="img-animation">
+      <img
+        src="./assets/img/{{ service.image }}"
+        alt="..."
+        class="card-img-top img-responsive"
+        height="150px"
+      />
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title " height="50px">{{ service.categorie }}</h5>
+      <!-- <p class="card-text">
+                      This is a wider card with supporting text below as a natural lead-in
+                      to additional content. This content is a little bit longer.
+                    </p> -->
+    </div>
+  </div>
+</a>

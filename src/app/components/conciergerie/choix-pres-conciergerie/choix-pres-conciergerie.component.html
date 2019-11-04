@@ -1,0 +1,45 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-sm-9">
+      <app-choix-pres-conciergerie-item
+        class="col-sm-12"
+        *ngFor="let choix of choixList"
+        [choix]="choix"
+      >
+      </app-choix-pres-conciergerie-item>
+    </div>
+    <div class="col-sm-2 pt-5 pb-1 border ">
+      <b>Le tarif inclut :</b> <br />
+      <div class="justify-content-center pl-4">
+        <img src="assets/img/bonhomme.jpg" alt="..." />
+        <p>
+          La main d'oeuvre
+        </p>
+      </div>
+      <div class="justify-content-center pl-4">
+        <img src="assets/img/direction.jpg" alt="..." />
+        <p>
+          Le déplacement
+        </p>
+      </div>
+      <div class="justify-content-center pl-4">
+        <img src="assets/img/materiel.jpg" alt="..." />
+        <p>
+          Le matériel de base
+        </p>
+      </div>
+      <div class="justify-content-center pl-4">
+        <img src="assets/img/nettoyage.jpg" alt="..." />
+        <p>
+          Le nettoyage
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 justify-content-center">
+    <button type="button" class="btn btn-primary btn-lg  ">
+      <i class="fas fa-phone-alt fa-lg"></i>
+      Nous contacter par téléphone
+    </button>
+  </div>
+</div>

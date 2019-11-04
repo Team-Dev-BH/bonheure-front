@@ -1,0 +1,63 @@
+p {
+  color: rgb(19, 79, 92);
+  font-weight: bold;
+}
+
+.img-fluid {
+  max-width: 100px;
+  height: auto;
+}
+
+.pr {
+  color: rgb(179, 139, 7);
+  font-weight: bold;
+  font-size: 19px;
+  font-style: italic;
+}
+
+.info {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-success {
+  background-color: rgb(179, 139, 7);
+  border: 1px rgb(179, 139, 7);
+  width: 200px;
+  height: 60px;
+  font-size: 15px;
+}
+
+.point-1 {
+  position: absolute;
+  left: 24%;
+  bottom: 25%;
+}
+.point-2 {
+  position: absolute;
+  bottom: 25%;
+}
+
+.point-3 {
+  position: absolute;
+  bottom: 25%;
+  right: 24%;
+}
+
+.endPres {
+  color: rgb(179, 139, 7);
+}
+
+.dark {
+  color: rgb(179, 139, 7);
+}
+
+.col-md-3 {
+  font-size: 12px;
+}
+
+.btn-primary {
+  background-color: rgb(19, 79, 92);
+  height: 50px;
+  font-size: 13px;
+}

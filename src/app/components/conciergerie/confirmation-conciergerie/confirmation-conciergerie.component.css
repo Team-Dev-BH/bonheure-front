@@ -1,0 +1,21 @@
+img {
+  display: block;
+  max-width: 10%;
+  height: auto;
+  padding-right: 20px;
+}
+
+h3 {
+  color: rgb(179, 139, 7);
+}
+
+.btn-success {
+  width: 250px;
+  background-color: rgb(19, 79, 92);
+  border: rgb(19, 97, 92) 1px;
+  font-size: 15px;
+}
+
+p {
+  text-align: center;
+}

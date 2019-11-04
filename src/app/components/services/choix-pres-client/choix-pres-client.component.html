@@ -1,0 +1,12 @@
+<div class="container-fluid mt-3">
+  <h4>Devis en attente de validation</h4>
+
+  <div class="row">
+    <app-choix-pres-client-item
+      class="col-md-12"
+      *ngFor="let choix of choixList"
+      [choix]="choix"
+    >
+    </app-choix-pres-client-item>
+  </div>
+</div>

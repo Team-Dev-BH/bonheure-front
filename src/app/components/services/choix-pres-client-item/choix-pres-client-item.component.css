@@ -1,0 +1,29 @@
+img {
+  width: 80px;
+  height: 80px;
+}
+
+.prix {
+  color: rgb(191, 144, 0);
+}
+
+.btn-success {
+  background-color: rgb(191, 144, 0);
+  border: rgb(191, 144, 0) 1px;
+  font-size: 15px;
+}
+
+.col-sm-2 {
+  font-size: 14px;
+  color: rgb(191, 144, 0);
+  font-weight: bold;
+}
+
+.col-sm-3 {
+  font-size: 12px;
+}
+
+p {
+  font-size: 10px;
+  color: black;
+}

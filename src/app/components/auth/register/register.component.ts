@@ -6,7 +6,7 @@ import {
   FormControl
 } from "@angular/forms";
 import { Router } from "@angular/router";
-// import { PasswordValidator } from "../control/password.validator";
+import { PasswordValidator } from "../../../control/password.validator";
 
 @Component({
   selector: "app-register",
@@ -61,12 +61,17 @@ export class RegisterComponent implements OnInit {
       lastName: ["", Validators.required],
       email: ["", Validators.required],
       mobileNumber: ["", Validators.required],
-      date_naissance: [, Validators.required],
+      date_naissance: ["", Validators.required],
       fonction: ["", Validators.required],
       password: [""],
-      confirmPassword: [""],
+      confirmPassword: ["", PasswordValidator],
+
       code: ["", Validators.required]
     });
+
+    this.registerForm.controls.password.valueChanges.subscribe(x =>
+      this.registerForm.controls.confirmPassword.updateValueAndValidity()
+    );
   }
 
   onSubmitForm() {

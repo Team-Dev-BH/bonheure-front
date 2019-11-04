@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ServiceService } from "../../service/service.service";
 
 import { Subscription } from "rxjs";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-conciergerie",
@@ -13,7 +14,7 @@ export class ConciergerieComponent implements OnInit, OnDestroy {
   currentIndex = 0;
   listSubcription: Subscription;
 
-  constructor(private serviceSrv: ServiceService) {}
+  constructor(private serviceSrv: ServiceService, private router: Router) {}
 
   ngOnInit() {
     this.listSubcription = this.serviceSrv.listSubject.subscribe(services => {

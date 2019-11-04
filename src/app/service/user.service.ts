@@ -5,7 +5,15 @@ import { User } from "../entities/user.model";
   providedIn: "root"
 })
 export class UserServiceService {
-  private users: User[] = [];
+  User = [
+    {
+      firstName: "Mouhamed",
+      lastName: "Ayedi",
+      email: "nom.prenom@email.com",
+      mobileNumber: "+ 216 50 05 55",
+      fonction: "RSSI à L'Oréal"
+    }
+  ];
 
   constructor() {}
 }

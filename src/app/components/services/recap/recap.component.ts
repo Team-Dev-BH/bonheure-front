@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-recap",
@@ -8,10 +9,13 @@ import { Component, OnInit } from "@angular/core";
 export class RecapComponent implements OnInit {
   categorie = "plomberie";
   sous_categorie = "urgence";
-  type = "fuit d'eau";
+  type = "fuite d'eau";
   sous_type = "WC";
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+  confirm() {
+    this.router.navigate(["home/confirmation"]);
+  }
 }

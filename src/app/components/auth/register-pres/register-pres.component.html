@@ -64,9 +64,9 @@
                   <label for="lastName">Prénom</label>
                   <input
                     [class.is-invalid]="lastName.invalid && lastName.touched"
+                    formControlName="lastName"
                     type="text"
                     class="form-control"
-                    formControlName="lastName"
                   />
                   <div *ngIf="lastName.invalid && lastName.touched">
                     <small
@@ -200,54 +200,33 @@
                 </div>
               </div>
             </div>
-            <div class="row d-flex justify-content-center">
-              <div class="col-md-6 ">
-                <!--pass and pass confirm identic 24-->
+
+            <div class="row">
+              <div class="col">
                 <div class="form-group">
                   <label for="password">Mot de passe</label>
                   <input
-                    [class.is-invalid]="password.invalid && password.touched"
                     type="password"
                     class="form-control"
                     formControlName="password"
                   />
-
-                  <div *ngIf="password.invalid && password.touched">
-                    <small
-                      *ngIf="password.errors?.required"
-                      class="text-danger"
-                    >
-                      champ obligatoire</small
-                    >
-                  </div>
                 </div>
               </div>
-
-              <div class="col-md-6 ">
-                <div class="form-group">
-                  <label for="confirmPassword">Confirmer mot de passe</label>
+              <div class="col">
+                <div class="form-group  ">
+                  <label for="confirmPassword">Confirmer Mot de passe</label>
                   <input
-                    [class.is-invalid]="
-                      confirmPassword.invalid && confirmPassword.touched
-                    "
                     type="password"
                     class="form-control"
                     formControlName="confirmPassword"
                   />
-
-                  <div
-                    *ngIf="confirmPassword.invalid && confirmPassword.touched"
-                  >
-                    <small
-                      *ngIf="confirmPassword.errors?.required"
-                      class="text-danger"
-                    >
-                      champ obligatoire</small
-                    >
-                  </div>
+                </div>
+                <div *ngIf="!register_preForm.controls.confirmPassword.valid">
+                  <small class="text-danger"> not valid</small>
                 </div>
               </div>
             </div>
+
             <div class="row">
               <div class="col d-flex justify-content-left">
                 <button
@@ -365,7 +344,7 @@
               </div>
             </div>
 
-            <h6>Choisir votre adresse de travail préféré</h6>
+            <h6>choisissez votre zone d'intervention</h6>
             <div class="row d-flex justify-content-center">
               <div class="col-md-6">
                 <div class="form-group">
