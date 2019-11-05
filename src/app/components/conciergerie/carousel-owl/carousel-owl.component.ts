@@ -18,7 +18,7 @@ import { Router } from "@angular/router";
 })
 export class CarouselOwlComponent implements OnInit, AfterViewInit {
   @Input() service;
-  @Input() listServices;
+  @Input() categoriesList;
   @Output() selectService = new EventEmitter();
 
   customOptions: OwlOptions = {

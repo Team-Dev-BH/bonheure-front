@@ -2,8 +2,8 @@
   <div class="row">
     <app-service-item
       class="col-sm-4"
-      *ngFor="let service of listService"
-      [service]="service"
+      *ngFor="let categorie of categoriesList"
+      [categorie]="categorie"
       (selectService)="selectService($event)"
     >
     </app-service-item>

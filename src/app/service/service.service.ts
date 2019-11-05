@@ -1,224 +1,59 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { element } from "protractor";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Categorie } from "../entities/categorie.model";
+import { Prestation } from "../entities/prestation.model";
 
 @Injectable({
   providedIn: "root"
 })
 export class ServiceService {
-  listSubject = new Subject<any[]>();
+  CategorielistSubject = new Subject<any[]>();
   singleServiceSubject = new Subject<any>();
 
-  selectedItem;
-  selectedPrestation;
+  // categories URL :
+  private categoriesUrl = "http://localhost:8080/categories/getallCategory";
 
-  private listService = [
-    {
-      reference: 1,
-      categorie: "Quotidien",
-      image: "quotidien.jpg",
-      services: [
-        {
-          reference: 1,
-          type: "plomberie",
-          sousPrestation: [
-            { reference: 1, type: "WC" },
-            { reference: 2, type: "Fuite d'eau ou engorgement" },
-            { reference: 3, type: "Installation ou changement d'equipements" },
-            { reference: 4, type: "Robinetterie" },
-            { reference: 5, type: "Chauf eau" },
-            { reference: 6, type: "Autres" }
-          ]
-        },
-        {
-          reference: 2,
-          type: "chaud-froid",
-          sousPrestation: [
-            { reference: 1, type: "vkjifji" },
-            { reference: 2, type: "vkjifji" },
-            { reference: 3, type: "vkjifji" }
-          ]
-        },
-        {
-          reference: 3,
-          type: "electricité",
-          sousPrestation: [{ reference: 1, type: "bleblas" }]
-        },
-        {
-          reference: 4,
-          type: "peinture",
-          sousPrestation: [{ reference: 1, type: "idjiuf" }]
-        },
-        {
-          reference: 5,
-          type: "vitrerie",
-          sousPrestation: [{ reference: 1, type: "kdfuyf" }]
-        },
-        {
-          reference: 6,
-          type: "a la demande",
-          sousPrestation: [{ reference: 1, type: "ddfjhf" }]
-        }
-      ]
-    },
-    {
-      reference: 2,
-      categorie: "Depannage",
-      image: "depannage2.jpg",
-      services: [
-        {
-          reference: 1,
-          type: "servie x",
-          sousPrestation: [{ reference: 1, type: "kffjuf" }]
-        },
-        {
-          reference: 2,
-          type: "service",
-          sousPrestation: [{ reference: 1, type: "lorem ipsum" }]
-        },
-        {
-          reference: 3,
-          type: "service wx",
-          sousPrestation: [{ reference: 1, type: "hjiuhfuhgt" }]
-        },
-        {
-          reference: 4,
-          type: "service xx",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 5,
-          type: "service xxxx",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        }
-      ]
-    },
-    {
-      reference: 3,
-      categorie: "Service clients",
-      image: "serviceclient1.webp",
+  // prestiation by categories Name URL :
+  private PrestationByCategoryNameUrl =
+    "http://localhost:8080/prestations/prestationByCategoryName?categoryName=Quotidien";
 
-      services: [
-        {
-          reference: 1,
-          type: "servie x",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 2,
-          type: "service",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 3,
-          type: "service wx",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 4,
-          type: "service xx",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 5,
-          type: "service xxxx",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        }
-      ]
-    },
-    {
-      reference: 4,
-      categorie: "Grands projets",
-      image: "project.jpg",
+  constructor(private http: HttpClient) {}
 
-      services: [
-        {
-          reference: 1,
-          type: "servie x",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 2,
-          type: "service",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        }
-      ]
-    },
-    {
-      reference: 5,
-      categorie: "Bien etre",
-      image: "bienetre.jpg",
-
-      services: [
-        {
-          reference: 1,
-          type: "servie x",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 2,
-          type: "service",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 3,
-          type: "service wx",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        }
-      ]
-    },
-    {
-      reference: 6,
-      categorie: "A la demande",
-      image: "demande.jpg",
-
-      services: [
-        {
-          reference: 1,
-          type: "servie A",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 2,
-          type: "service AA",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        },
-        {
-          reference: 3,
-          type: "service AAA",
-          sousPrestation: [{ reference: 1, type: "WC" }]
-        }
-      ]
-    }
-  ];
-  listServices: any;
-
-  constructor() {}
-
-  emitListSubject() {
-    this.listSubject.next(this.listService.slice());
+  getAllCatgories(): Observable<Categorie[]> {
+    return this.http.get<Categorie[]>(this.categoriesUrl);
   }
 
-  getSingleServiceByReference(reference) {
-    let selectedItem = this.listService.find(
-      element => element.reference === reference
-    );
-
-    this.selectedItem = selectedItem;
-    return selectedItem;
+  getPrestationByCategoryName(categorieName): Observable<Prestation[]> {
+    return this.http.get<Prestation[]>(this.PrestationByCategoryNameUrl);
   }
 
-  getPrestationByReference(referenceCategorie, referencePrestation) {
-    let selectedItem = this.listService.find(
-      element => element.reference === referenceCategorie
-    );
+  // emitListSubject() {
+  //   this.listSubject.next(this.listService.slice());
+  // }
 
-    let finalItem = selectedItem.services.find(
-      element => element.reference === referencePrestation
-    );
+  // getSingleServiceByReference(reference) {
+  //   let selectedItem = this.listService.find(
+  //     element => element.reference === reference
+  //   );
 
-    this.selectedPrestation = finalItem;
+  //   this.selectedItem = selectedItem;
+  //   return selectedItem;
+  // }
 
-    return finalItem;
-  }
+  // getPrestationByReference(referenceCategorie, referencePrestation) {
+  //   let selectedItem = this.listService.find(
+  //     element => element.reference === referenceCategorie
+  //   );
+
+  //   let finalItem = selectedItem.services.find(
+  //     element => element.reference === referencePrestation
+  //   );
+
+  //   this.selectedPrestation = finalItem;
+
+  //   return finalItem;
+  // }
 }

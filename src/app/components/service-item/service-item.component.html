@@ -4,16 +4,16 @@
     <div class="card-body">
       <div class="title-div">
         <h5 class="card-title ">
-          {{ service.categorie }}
+          {{ categorie.name }}
           <i
             class="fas"
             [ngClass]="{
-              ' fa-users': service.categorie == 'Service clients',
-              ' fa-wrench': service.categorie == 'Depannage',
-              ' fa-shopping-cart': service.categorie == 'Quotidien',
-              ' fa-building': service.categorie == 'Grands projets',
-              ' fa-tshirt': service.categorie == 'Bien etre',
-              ' fa-question-circle': service.categorie == 'A la demande'
+              ' fa-users': categorie.name == 'Service clients',
+              ' fa-wrench': categorie.name == 'Depannage',
+              ' fa-shopping-cart': categorie.name == 'Quotidien',
+              ' fa-building': categorie.name == 'Grands projets',
+              ' fa-tshirt': categorie.name == 'Bien etre',
+              ' fa-question-circle': categorie.name == 'A la demande'
             }"
           ></i>
         </h5>

@@ -8,9 +8,14 @@ import { Router } from "@angular/router";
   styleUrls: ["./conciergerie-item.component.css"]
 })
 export class ConciergerieItemComponent implements OnInit {
-  @Input() service;
+  @Input() categorie;
   @Input() listServices;
   @Output() selectService = new EventEmitter();
+
+  imageUrlDepannage = "assets/img/depannage.jpg";
+  imageUrlQuotidien;
+  imageUrlDemande;
+  imageUrlBien = "assets/img/bienetre.jpg";
   constructor(private router: Router, private srvService: ServiceService) {}
 
   ngOnInit() {}
