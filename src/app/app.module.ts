@@ -91,6 +91,7 @@ import { AddTelComponent } from "./components/prestataire/parametre/parametre-se
 import { ConciergerieItemComponent } from "./components/conciergerie/conciergerie-item/conciergerie-item.component";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { NgxPaginationModule } from "ngx-pagination";
+import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -157,7 +158,8 @@ import { NgxPaginationModule } from "ngx-pagination";
     AddPrestationComponent,
     AddAdresseComponent,
     AddTelComponent,
-    ConciergerieItemComponent
+    ConciergerieItemComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

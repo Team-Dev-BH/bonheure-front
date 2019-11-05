@@ -64,7 +64,7 @@ export class ServiceService {
     {
       reference: 2,
       categorie: "Depannage",
-      image: "depannage.PNG",
+      image: "depannage2.jpg",
       services: [
         {
           reference: 1,
@@ -96,7 +96,7 @@ export class ServiceService {
     {
       reference: 3,
       categorie: "Service clients",
-      image: "service-client.webp",
+      image: "serviceclient1.webp",
 
       services: [
         {

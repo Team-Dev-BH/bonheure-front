@@ -1,8 +1,16 @@
+<div class="row">
+  <input type="text" placeholder="Search" [(ngModel)]="searchText" />
+</div>
+
 <div class="container-fluid mt-4">
   <div class="row">
     <app-pilotage-item
       class="col-md-4"
-      *ngFor="let pilotage of listPilotage"
+      *ngFor="
+        let pilotage of listPilotage
+          | filter: SearchText
+          | paginate: { itemsPerPage: 5, currentPage: p }
+      "
       [pilotage]="pilotage"
     >
     </app-pilotage-item>

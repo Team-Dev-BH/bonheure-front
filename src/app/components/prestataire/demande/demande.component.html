@@ -1,65 +1,13 @@
-<!-- <div class="card shadow mb-4 mt-4">
-  <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold ">Liste des demandes</h6>
-  </div>
-  <div class="card-body">
-    <div class="table-responsive">
-      <table
-        class="table table-bordered"
-        id="dataTable"
-        width="100%"
-        cellspacing="0"
-      >
-        <thead>
-          <th>Date</th>
-          <th>Délai préstation</th>
-          <th>Catégorie</th>
-          <th>Préstation 1</th>
-          <th>Préstation 2</th>
-          <th>Localisation</th>
-          <th>Statut</th>
-        </thead>
-
-        <tbody>
-          
-                          <tr *ngFor="let mes of messageList |filter:SearchText |paginate: {itemsPerPage:5, currentPage:p}">
-                            <td (click)="populateForm(art)">{{art.libart}}</td>
-                            <td (click)="populateForm(art)">{{art.libelle}}</td>
-                            <td (click)="populateForm(art)">{{art.libsfam}}</td>
-                            <td (click)="populateForm(art)">{{art.tva}}</td>
-                            <td (click)="populateForm(art)">{{art.p_revient}}</td>
-                            <td (click)="populateForm(art)">{{art.fodec}}</td>
-                            <td (click)="populateForm(art)">{{art.code_article}}</td>
-                        
-                           
-                            <a class="btn text-danger" (click)="onDelete(art.Id)"><i class="fa fa-trash fa-lg"></i> </a>
-                            <a class="btn text-danger" (click)="selectArticle(art)"><i class="fa fa-pencil fa-lg"></i> </a>
-                        
-                           
-                          </tr>
-                          <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"></ul></div></div></div>
-                        </tbody>
-                        <a class="btn btn-outline-dark ml-1" routerLink="/articles"><i class="fa fa-plus-square"></i> Retour </a>
-                         
-      </table>
-    </div>
-  </div>
-</div>
-
-
-
- -->
-
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Liste Famille</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Liste des demandes</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">
       <div class="input-group">
         <input
           type="text"
-          [(ngModel)]="SearchText"
+          [(ngModel)]="searchText"
           class="form-control bg-light border-0 small"
           placeholder="Recherche..."
           aria-label="Search"
@@ -71,6 +19,7 @@
           </button>
         </div>
       </div>
+      <!-- <app-search (useSearchText)="sendText($event)"></app-search> -->
       <br /><br />
       <table
         class="table table-bordered"
@@ -93,8 +42,8 @@
         <tbody>
           <tr
             *ngFor="
-              let fam of messageList
-                | filter: SearchText
+              let fam of demandeList
+                | filter: searchText
                 | paginate: { itemsPerPage: 5, currentPage: p }
             "
           >

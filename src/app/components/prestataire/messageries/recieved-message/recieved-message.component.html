@@ -1,9 +1,25 @@
-<div class="card shadow mb-4 mt-4">
+<div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold ">Liste des messages</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Liste des messages</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">
+      <div class="input-group">
+        <input
+          type="text"
+          [(ngModel)]="SearchText"
+          class="form-control bg-light border-0 small"
+          placeholder="Recherche..."
+          aria-label="Search"
+          aria-describedby="basic-addon2"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <i class="fas fa-search fa-sm"></i>
+          </button>
+        </div>
+      </div>
+      <br /><br />
       <table
         class="table table-bordered"
         id="dataTable"
@@ -11,35 +27,58 @@
         cellspacing="0"
       >
         <thead>
-          <th>Date</th>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Sujet</th>
-          <th>Statut</th>
+          <tr>
+            <th>Date</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Sujet</th>
+            <th>Status</th>
+          </tr>
         </thead>
 
-        <!-- <tbody>
-    
-                    <tr *ngFor="let mes of service.messageList |filter:SearchText |paginate: {itemsPerPage:5, currentPage:p}">
-                      <td (click)="populateForm(art)">{{art.libart}}</td>
-                      <td (click)="populateForm(art)">{{art.libelle}}</td>
-                      <td (click)="populateForm(art)">{{art.libsfam}}</td>
-                      <td (click)="populateForm(art)">{{art.tva}}</td>
-                      <td (click)="populateForm(art)">{{art.p_revient}}</td>
-                      <td (click)="populateForm(art)">{{art.fodec}}</td>
-                      <td (click)="populateForm(art)">{{art.code_article}}</td>
-                  
-                     
-                      <a class="btn text-danger" (click)="onDelete(art.Id)"><i class="fa fa-trash fa-lg"></i> </a>
-                      <a class="btn text-danger" (click)="selectArticle(art)"><i class="fa fa-pencil fa-lg"></i> </a>
-                  
-                     
-                    </tr>
-                    <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"></ul></div></div></div>
-                  </tbody>
-                  <a class="btn btn-outline-dark ml-1" routerLink="/articles"><i class="fa fa-plus-square"></i> Retour </a>
-                   -->
+        <tbody>
+          <tr
+            *ngFor="
+              let fam of messageListePres
+                | filter: SearchText
+                | paginate: { itemsPerPage: 5, currentPage: p }
+            "
+          >
+            <td>[{{ fam.date }}]</td>
+            <td>[{{ fam.lastName }}]</td>
+            <td>[{{ fam.firstName }}]</td>
+            <td>[{{ fam.sujet }}]</td>
+            <td>[{{ fam.status }}]</td>
+            <!-- 
+            <a class="btn text-danger" (click)="onDelete(fam.Id)"
+              ><i class="fa fa-trash fa-lg"></i>
+            </a>
+            <a class="btn text-danger" (click)="populateForm(fam)"
+              ><i class="fa fa-pencil fa-lg"></i>
+            </a> -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-5">
+                <div
+                  class="dataTables_info"
+                  id="dataTable_info"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-sm-12 col-md-7">
+                <div
+                  class="dataTables_paginate paging_simple_numbers"
+                  id="dataTable_paginate"
+                >
+                  <ul class="pagination"></ul>
+                </div>
+              </div>
+            </div>
+          </tr>
+        </tbody>
       </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
   </div>
 </div>

@@ -7,11 +7,18 @@ import { DemandeServiceService } from "src/app/service/demande-service.service";
   styleUrls: ["./demande.component.css"]
 })
 export class DemandeComponent implements OnInit {
-  messageList;
+  demandeList;
+  searchText = "";
+
   constructor(private demandeService: DemandeServiceService) {}
 
+  // useSearchText(text) {
+  //   this.searchText = text;
+  // }
+
+  
   ngOnInit() {
-    this.messageList = this.demandeService.messageList;
-    console.log(this.messageList);
+    this.demandeList = this.demandeService.demandeList;
+    console.log(this.demandeList);
   }
 }
