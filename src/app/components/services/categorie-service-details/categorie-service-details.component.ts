@@ -29,9 +29,9 @@ export class CategorieServiceDetailsComponent implements OnInit {
       this.serviceReference = params.get("referenceCategorie");
     });
 
-    this.categorie = this.serviceSrv.getSingleServiceByReference(
-      parseInt(this.serviceReference)
-    );
+    // this.categorie = this.serviceSrv.getSingleServiceByReference(
+    //   parseInt(this.serviceReference)
+    // );
 
     console.log(this.categorie);
 

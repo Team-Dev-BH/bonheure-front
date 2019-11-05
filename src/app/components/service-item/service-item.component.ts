@@ -8,8 +8,8 @@ import { ServiceService } from "../../service/service.service";
   styleUrls: ["./service-item.component.css"]
 })
 export class ServiceItemComponent implements OnInit {
-  @Input() service;
-  @Input() listServices;
+  @Input() categorie;
+
   @Output() selectService = new EventEmitter();
 
   constructor(private router: Router, private srvService: ServiceService) {}

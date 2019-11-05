@@ -3,6 +3,7 @@ import { ServiceService } from "../../service/service.service";
 
 import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
+import { Categorie } from "../../entities/categorie.model";
 
 @Component({
   selector: "app-conciergerie",
@@ -10,36 +11,19 @@ import { Router } from "@angular/router";
   styleUrls: ["./conciergerie.component.css"]
 })
 export class ConciergerieComponent implements OnInit, OnDestroy {
-  listServices = [];
-  currentIndex = 0;
+  categoriesList: Categorie[];
   listSubcription: Subscription;
 
   constructor(private serviceSrv: ServiceService, private router: Router) {}
 
   ngOnInit() {
-    this.listSubcription = this.serviceSrv.listSubject.subscribe(services => {
-      this.listServices = services;
+    this.serviceSrv.getAllCatgories().subscribe(dataList => {
+      this.categoriesList = dataList;
+      console.log(this.categoriesList);
     });
-
-    // emitting list of services
-    this.serviceSrv.emitListSubject();
-    console.log(this.listServices);
-  }
-
-  previous() {
-    if (this.currentIndex > 0) this.currentIndex = this.currentIndex - 1;
-
-    this.serviceSrv.emitListSubject();
-  }
-
-  next() {
-    if (this.currentIndex < this.listServices.length - 1)
-      this.currentIndex = this.currentIndex + 1;
-
-    this.serviceSrv.emitListSubject();
   }
 
   ngOnDestroy() {
-    this.listSubcription.unsubscribe();
+    //this.listSubcription.unsubscribe();
   }
 }
