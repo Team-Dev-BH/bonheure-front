@@ -11,9 +11,8 @@ import { Prestation } from "src/app/entities/prestation.model";
 })
 export class PrestationDetailsComponent implements OnInit {
   categorieReference;
-  prestationReference;
-  prestation;
-  PrestationListByCategoryName: Prestation[];
+  prestationName: String;
+  prestationListChilds: Prestation[];
 
   constructor(
     private serviceSrv: ServiceService,
@@ -25,6 +24,20 @@ export class PrestationDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    //Subscribing to route param prestation name
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.prestationName = params.get("namePrestation");
+    });
+
+    console.log(this.prestationName);
+
+    //subcribing to observable list of prestations childs:
+    this.serviceSrv
+      .getPrestationByPrentName(this.prestationName)
+      .subscribe(data => {
+        this.prestationListChilds = data;
+        console.log("list of prestation childs:", this.prestationListChilds);
+      });
     // this.route.paramMap.subscribe((params: ParamMap) => {
     // this.prestationReference = params.get("referencePrestation");
     // console.log("current presatation reference ", this.prestationReference);

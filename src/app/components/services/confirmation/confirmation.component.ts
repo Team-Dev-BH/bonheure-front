@@ -13,4 +13,8 @@ export class ConfirmationComponent implements OnInit {
   recap() {
     this.router.navigate(["home/recap"]);
   }
+
+  acceuil() {
+    this.router.navigate(["home"]);
+  }
 }

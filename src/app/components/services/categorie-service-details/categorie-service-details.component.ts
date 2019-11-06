@@ -5,6 +5,7 @@ import { ServiceService } from "../../../service/service.service";
 import { DataStorageCommandeService } from "../../../service/data-storage-commande.service";
 import { ActivatedRoute, Router, ParamMap } from "@angular/router";
 import { Subscription } from "rxjs";
+import { Prestation } from "src/app/entities/prestation.model";
 
 @Component({
   selector: "app-categorie-service-details",
@@ -12,10 +13,10 @@ import { Subscription } from "rxjs";
   styleUrls: ["./categorie-service-details.component.css"]
 })
 export class CategorieServiceDetailsComponent implements OnInit {
-  serviceReference;
+  categorieName: String;
 
   categorieSubscription: Subscription;
-  categorie = {};
+  prestationsList: Prestation[];
 
   constructor(
     private serviceSrv: ServiceService,
@@ -26,28 +27,25 @@ export class CategorieServiceDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.serviceReference = params.get("referenceCategorie");
+      this.categorieName = params.get("nameCategorie");
     });
 
-    // this.categorie = this.serviceSrv.getSingleServiceByReference(
-    //   parseInt(this.serviceReference)
-    // );
-
-    console.log(this.categorie);
+    this.serviceSrv
+      .getPrestationByCategoryName(this.categorieName)
+      .subscribe(data => {
+        this.prestationsList = data;
+        console.log("current prestation list", this.prestationsList);
+      });
 
     //send route param to next component:
   }
 
   //selection a prestation
   selectPrestation(prestation) {
-    // sending route param to next component using data storage service
-    this.dataStorageService.changeRouteParam(this.serviceReference);
-
-    this.router.navigate(
-      ["/home/services/", this.serviceReference, prestation.reference],
-      {
-        state: { serviceReference: this.serviceReference }
-      }
-    );
+    this.router.navigate([
+      "/home/services",
+      this.categorieName,
+      prestation.name
+    ]);
   }
 }

@@ -4,9 +4,8 @@
 <div class="row">
   <app-sous-prestation-item
     class="col-sm-6"
-    *ngFor="let sousPresta of prestation.sousPrestation"
-    [sousPresta]="sousPresta"
+    *ngFor="let prestation of prestationListChilds"
+    [prestation]="prestation"
   >
-    {{ sousPresta.type }}
   </app-sous-prestation-item>
 </div>

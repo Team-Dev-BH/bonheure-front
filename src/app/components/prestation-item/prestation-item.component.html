@@ -1,22 +1,27 @@
 <a href="javascript: void(0)" (click)="onSelect(prestation)">
-  <div class="card mt-4">
+  <div
+    class="card mt-4 d-flex flex-column align-items-center"
+    style="font-size:60px;"
+  >
     <div class="card-body">
       <div class="title-div">
         <i
           class="fas"
           [ngClass]="{
-            ' fa-shower': prestation.type == 'plomberie',
-            ' fa-paint-roller': prestation.type == 'peinture',
-            ' fa-temperature-low': prestation.type == 'chaud-froid',
-            ' fa-bolt': prestation.type == 'electricité',
-            ' fa-tshirt': prestation.type == 'Bien etre',
-            ' fa-question-circle': prestation.type == 'a la demande'
+            ' fa-shower': prestation.name == 'plomberie',
+            ' fa-paint-roller': prestation.name == 'peinture',
+            ' fa-temperature-low': prestation.name == 'chaud-froid',
+            ' fa-bolt': prestation.name == 'electricité',
+            ' fa-tshirt': prestation.name == 'Bien etre',
+            ' fa-question-circle': prestation.name == 'a la demande',
+            ' fa-city': prestation.name == 'vitrerie'
           }"
         ></i>
-        <h5 class="card-title ">
-          {{ prestation.type }}
+        <h5 class="card-title">
+          {{ prestation.name }}
         </h5>
       </div>
     </div>
   </div>
+  />
 </a>

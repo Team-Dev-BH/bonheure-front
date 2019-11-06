@@ -2,7 +2,7 @@
   <div class="row">
     <app-prestation-item
       class="col-sm-4"
-      *ngFor="let prestation of categorie.services"
+      *ngFor="let prestation of prestationsList"
       [prestation]="prestation"
       (selectPrestation)="selectPrestation($event)"
     ></app-prestation-item>

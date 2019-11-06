@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./sous-prestation-item.component.css"]
 })
 export class SousPrestationItemComponent implements OnInit {
-  @Input() sousPresta;
+  @Input() prestation;
 
   constructor() {}
 

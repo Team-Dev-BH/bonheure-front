@@ -17,8 +17,11 @@ export class ServiceService {
   private categoriesUrl = "http://localhost:8080/categories/getallCategory";
 
   // prestiation by categories Name URL :
-  private PrestationByCategoryNameUrl =
-    "http://localhost:8080/prestations/prestationByCategoryName?categoryName=Quotidien";
+  private prestationByCategoryNameUrl =
+    "http://localhost:8080/prestations/prestationByCategoryName?categoryName=";
+
+  private prestationByPrarentNameUrl =
+    "http://localhost:8080/prestations/prestationByParentName?ParentName=";
 
   constructor(private http: HttpClient) {}
 
@@ -26,8 +29,16 @@ export class ServiceService {
     return this.http.get<Categorie[]>(this.categoriesUrl);
   }
 
-  getPrestationByCategoryName(categorieName): Observable<Prestation[]> {
-    return this.http.get<Prestation[]>(this.PrestationByCategoryNameUrl);
+  getPrestationByCategoryName(categorieName: String): Observable<Prestation[]> {
+    return this.http.get<Prestation[]>(
+      this.prestationByCategoryNameUrl + categorieName
+    );
+  }
+
+  getPrestationByPrentName(parentName: String): Observable<Prestation[]> {
+    return this.http.get<Prestation[]>(
+      this.prestationByPrarentNameUrl + parentName
+    );
   }
 
   // emitListSubject() {

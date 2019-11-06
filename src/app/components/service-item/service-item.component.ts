@@ -16,7 +16,8 @@ export class ServiceItemComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSelect(service) {
-    this.selectService.emit(service);
+  onSelect(categorie) {
+    this.selectService.emit(categorie);
+    console.log(categorie);
   }
 }

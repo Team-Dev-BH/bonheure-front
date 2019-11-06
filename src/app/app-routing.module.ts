@@ -72,11 +72,11 @@ const routes: Routes = [
         component: ServicesComponent
       },
       {
-        path: "services/:referenceCategorie",
+        path: "services/:nameCategorie",
         component: CategorieServiceDetailsComponent
       },
       {
-        path: "services/:referenceCategotrie/:referencePrestation",
+        path: "services/:nameCategotrie/:namePrestation",
         component: PrestationDetailsComponent
       },
       {
