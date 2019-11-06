@@ -4,7 +4,7 @@ import { element } from "protractor";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Categorie } from "../entities/categorie.model";
-import { Prestation } from "..//entities/prestation.model";
+import { Prestation } from "../entities/prestation.model";
 
 @Injectable({
   providedIn: "root"

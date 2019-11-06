@@ -22,8 +22,8 @@ export class ServicesComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.serviceSrv.getAllCatgories().subscribe(data => {
-      console.log(data);
       this.categoriesList = data;
+      console.log(this.categoriesList);
     });
   }
 
