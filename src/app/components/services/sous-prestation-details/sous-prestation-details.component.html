@@ -28,23 +28,34 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-2">
-      <button type="button" class="btn btn-success btn-lg" (click)="delai()">
+      <button type="button" class="btn btn-success btn-lg">
         Urgent
       </button>
     </div>
     <div class="col-md-2">
-      <button type="button" class="btn btn-success btn-lg" (click)="delai()">
+      <button type="button" class="btn btn-success btn-lg">
         Sous 48h
       </button>
     </div>
     <div class="col-md-2">
-      <button type="button" class="btn btn-success btn-lg" (click)="delai()">
+      <button type="button" class="btn btn-success btn-lg">
         Sur RDV
       </button>
     </div>
     <div class="col-md-2">
-      <button type="button" class="btn btn-success btn-lg" (click)="delai()">
+      <button type="button" class="btn btn-success btn-lg">
         Réccurence
+      </button>
+    </div>
+  </div>
+  <div class="row mt-5 d-flex justify-content-center">
+    <div class="col-sm-3">
+      <button
+        type="button"
+        class="btn btn-success btn-lg"
+        (click)="goToRecap()"
+      >
+        Valider
       </button>
     </div>
   </div>

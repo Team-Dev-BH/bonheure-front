@@ -25,7 +25,6 @@ import { DemandeComponent } from "./components/prestataire/demande/demande.compo
 import { ParametreSecuriteComponent } from "./components/prestataire/parametre/parametre-securite/parametre-securite.component";
 import { ParametreMetierComponent } from "./components/prestataire/parametre/parametre-metier/parametre-metier.component";
 import { ServiceTypeComponent } from "./components/depannage/service-type/service-type.component";
-import { CommandeDelaiComponent } from "./components/services/commande-delai/commande-delai.component";
 import { RecapComponent } from "./components/services/recap/recap.component";
 import { ConfirmationComponent } from "./components/services/confirmation/confirmation.component";
 import { AccueilParametreComponent } from "./components/prestataire/parametre/accueil-parametre/accueil-parametre.component";
@@ -43,6 +42,7 @@ import { ChoixPresEvaluationComponent } from "./components/conciergerie/choix-pr
 import { ConfirmationPresConciergerieComponent } from "./components/conciergerie/confirmation-pres-conciergerie/confirmation-pres-conciergerie.component";
 import { ChoixPresClientComponent } from "./components/services/choix-pres-client/choix-pres-client.component";
 import { ChoixPresClientItemComponent } from "./components/services/choix-pres-client-item/choix-pres-client-item.component";
+import { SousPrestationDetailsComponent } from "./components/services/sous-prestation-details/sous-prestation-details.component";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "register", component: RegisterComponent },
@@ -76,18 +76,32 @@ const routes: Routes = [
         component: CategorieServiceDetailsComponent
       },
       {
-        path: "services/:nameCategotrie/:namePrestation",
+        path: "services/:nameCategorie/:namePrestation",
         component: PrestationDetailsComponent
+      },
+      {
+        path: "services/:nameCategorie/:namePrestation/:nameSousPrestation",
+        component: SousPrestationDetailsComponent
+      },
+      {
+        path:
+          "services/:nameCategorie/:namePrestation/:nameSousPrestation/recap",
+        component: RecapComponent
+      },
+      {
+        path:
+          "services/:nameCategorie/:namePrestation/:nameSousPrestation/recap/confirm",
+        component: ConfirmationComponent
       },
       {
         path: "service_type",
         component: ServiceTypeComponent
       },
 
-      {
-        path: "commande_delai",
-        component: CommandeDelaiComponent
-      },
+      // {
+      //   path: "commande_delai",
+      //   component: SousPrestationDetailsComponent
+      // },
       {
         path: "recap",
         component: RecapComponent

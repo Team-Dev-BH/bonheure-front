@@ -1,15 +1,23 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
+import { ReplaySubject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class DataStorageCommandeService {
-  private routeParamSubject = new BehaviorSubject<any>(null);
-  routeParam = this.routeParamSubject.asObservable();
+  private routeParams: String[];
+
+  private routeParamsSubject = new BehaviorSubject<String[]>([]);
+
   constructor() {}
 
+  getRouteParams() {
+    return this.routeParamsSubject.asObservable();
+  }
+
   changeRouteParam(routeParam) {
-    this.routeParamSubject.next(routeParam);
+    this.routeParams.push(routeParam);
+    this.routeParamsSubject.next(this.routeParams);
   }
 }

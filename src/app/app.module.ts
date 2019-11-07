@@ -62,7 +62,6 @@ import { ParametreSecuriteComponent } from "./components/prestataire/parametre/p
 import { ParametreMetierComponent } from "./components/prestataire/parametre/parametre-metier/parametre-metier.component";
 import { ServiceTypeComponent } from "./components/depannage/service-type/service-type.component";
 import { ServiceTypeItemComponent } from "./components/depannage/service-type-item/service-type-item.component";
-import { CommandeDelaiComponent } from "./components/services/commande-delai/commande-delai.component";
 import { RecapComponent } from "./components/services/recap/recap.component";
 import { ConfirmationComponent } from "./components/services/confirmation/confirmation.component";
 import { AccueilParametreComponent } from "./components/prestataire/parametre/accueil-parametre/accueil-parametre.component";
@@ -93,6 +92,7 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { NgxPaginationModule } from "ngx-pagination";
 import { SearchComponent } from "./components/search/search.component";
 import { HttpClientModule } from "@angular/common/http";
+import { SousPrestationDetailsComponent } from './components/services/sous-prestation-details/sous-prestation-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -134,7 +134,6 @@ import { HttpClientModule } from "@angular/common/http";
     AccueilParametreComponent,
     ServiceTypeComponent,
     ServiceTypeItemComponent,
-    CommandeDelaiComponent,
     RecapComponent,
     ConfirmationComponent,
     SousPresConciergerieComponent,
@@ -160,7 +159,8 @@ import { HttpClientModule } from "@angular/common/http";
     AddAdresseComponent,
     AddTelComponent,
     ConciergerieItemComponent,
-    SearchComponent
+    SearchComponent,
+    SousPrestationDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@ import { Categorie } from "src/app/entities/categorie.model";
 export class ServicesComponent implements OnInit, OnDestroy {
   categoriesList: Categorie[];
 
-  listSubcription: Subscription;
+  categorieListSubscription: Subscription;
 
   constructor(private serviceSrv: ServiceService, private router: Router) {}
 

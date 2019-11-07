@@ -36,8 +36,6 @@ export class CategorieServiceDetailsComponent implements OnInit {
         this.prestationsList = data;
         console.log("current prestation list", this.prestationsList);
       });
-
-    //send route param to next component:
   }
 
   //selection a prestation
@@ -47,5 +45,12 @@ export class CategorieServiceDetailsComponent implements OnInit {
       this.categorieName,
       prestation.name
     ]);
+    // send route param categorieName to next component
+    this.dataStorageService
+      .getRouteParams()
+      .pipe()
+      .subscribe(routeParams => {
+        routeParams.push(this.categorieName);
+      });
   }
 }

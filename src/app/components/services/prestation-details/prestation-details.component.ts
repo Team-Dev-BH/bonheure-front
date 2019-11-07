@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router, ParamMap } from "@angular/router";
 import { ServiceService } from "../../../service/service.service";
 import { DataStorageCommandeService } from "../../../service/data-storage-commande.service";
@@ -9,8 +9,8 @@ import { Prestation } from "src/app/entities/prestation.model";
   templateUrl: "./prestation-details.component.html",
   styleUrls: ["./prestation-details.component.css"]
 })
-export class PrestationDetailsComponent implements OnInit {
-  categorieReference;
+export class PrestationDetailsComponent implements OnInit, OnDestroy {
+  categorieName: String;
   prestationName: String;
   prestationListChilds: Prestation[];
 
@@ -20,7 +20,7 @@ export class PrestationDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
-    this.categorieReference = history.state.serviceReference;
+    // this.categorieName = history.state.serviceReference;
   }
 
   ngOnInit() {
@@ -29,7 +29,15 @@ export class PrestationDetailsComponent implements OnInit {
       this.prestationName = params.get("namePrestation");
     });
 
+    //subscribing to categorieName from data storage service:
+    this.dataStorageService.getRouteParams().subscribe(routeParams => {
+      this.categorieName = routeParams[0];
+      console.log("routeParams", routeParams);
+      console.log("routeParam subject", this.categorieName);
+    });
+
     console.log(this.prestationName);
+    console.log("captured categorie name route param ", this.categorieName);
 
     //subcribing to observable list of prestations childs:
     this.serviceSrv
@@ -38,25 +46,26 @@ export class PrestationDetailsComponent implements OnInit {
         this.prestationListChilds = data;
         console.log("list of prestation childs:", this.prestationListChilds);
       });
-    // this.route.paramMap.subscribe((params: ParamMap) => {
-    // this.prestationReference = params.get("referencePrestation");
-    // console.log("current presatation reference ", this.prestationReference);
-    // });
-
-    // this.serviceSrv.getPrestationByCategoryName().subscribe(data => {
-    //   console.log(data);
-    //   this.PrestationListByCategoryName = data;
-    // })
-
-    // this.prestation = this.serviceSrv.getPrestationByReference(
-    //   parseInt(this.categorieReference),
-    //   parseInt(this.prestationReference)
-    // );
-
-    // getting categorie reference from service as observable
-    this.dataStorageService.routeParam.subscribe(routeParam => {
-      this.categorieReference = routeParam;
-    });
-    console.log("captured route param", this.categorieReference);
   }
+
+  //navigate to a sous prestation :
+  selectSousPrestation(sousPrestation) {
+    // send Prestation name to interested component:
+
+    this.router.navigate([
+      "/home/services",
+      this.categorieName,
+      this.prestationName,
+      sousPrestation.name
+    ]);
+    this.dataStorageService
+      .getRouteParams()
+      .pipe()
+      .subscribe(routeParams => {
+        routeParams.push(this.prestationName);
+      });
+    console.log("captured emmited prestation", sousPrestation);
+  }
+
+  ngOnDestroy() {}
 }

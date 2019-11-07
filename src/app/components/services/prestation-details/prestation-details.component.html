@@ -6,6 +6,7 @@
     class="col-sm-6"
     *ngFor="let prestation of prestationListChilds"
     [prestation]="prestation"
+    (selectSousPrestation)="selectSousPrestation($event)"
   >
   </app-sous-prestation-item>
 </div>

@@ -10,8 +10,7 @@ import { Prestation } from "../entities/prestation.model";
   providedIn: "root"
 })
 export class ServiceService {
-  CategorielistSubject = new Subject<any[]>();
-  singleServiceSubject = new Subject<any>();
+  CategorielistSubject = new Subject<Categorie[]>();
 
   // categories URL :
   private categoriesUrl = "http://localhost:8080/categories/getallCategory";
@@ -20,8 +19,13 @@ export class ServiceService {
   private prestationByCategoryNameUrl =
     "http://localhost:8080/prestations/prestationByCategoryName?categoryName=";
 
+  // prestation by parent name URL :
   private prestationByPrarentNameUrl =
     "http://localhost:8080/prestations/prestationByParentName?ParentName=";
+
+  // prestation by name URL:
+  private prestationByNameUrl =
+    "http://localhost:8080/prestations/getPrestationByName?name=";
 
   constructor(private http: HttpClient) {}
 
@@ -41,9 +45,13 @@ export class ServiceService {
     );
   }
 
-  // emitListSubject() {
-  //   this.listSubject.next(this.listService.slice());
-  // }
+  getPrestationByName(prestationName: String): Observable<Prestation> {
+    return this.http.get<Prestation>(this.prestationByNameUrl + prestationName);
+  }
+
+  emitcategoriesListSubject() {
+    this.CategorielistSubject.next();
+  }
 
   // getSingleServiceByReference(reference) {
   //   let selectedItem = this.listService.find(
