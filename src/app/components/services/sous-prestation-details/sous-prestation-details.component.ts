@@ -15,6 +15,8 @@ export class SousPrestationDetailsComponent implements OnInit {
   categorieName: String;
   sousPrestation: Prestation;
 
+  commande = { nature: "" };
+
   routeParam: String;
   constructor(
     private router: Router,
@@ -69,5 +71,14 @@ export class SousPrestationDetailsComponent implements OnInit {
       .subscribe(routeParams => {
         routeParams.push(this.sousPrestationName);
       });
+  }
+
+  // capture whath the user cliked:
+  captureOption($event) {
+    console.log($event.target);
+
+    this.commande.nature = $event.target;
+
+    console.log(this.commande);
   }
 }

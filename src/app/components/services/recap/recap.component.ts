@@ -13,10 +13,10 @@ export class RecapComponent implements OnInit {
   type = "fuite d'eau";
   sous_type = "WC";
 
+  // variables to stores route params subscribed from the data storage service:
   categorieName: String;
   prestationName: String;
   sousPrestationName: String;
-
   arrayOfRouteParamps: String[];
 
   constructor(
